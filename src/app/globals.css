@@ -4,12 +4,37 @@
 
 
 body {
+  color: var(--color-text);
+  background: var(--color-background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .button-icon {
+    @apply border-0 shadow-none
+  }
+
+  .icon-sm {
+    @apply h-[14px] w-[14px]
+  }
+
+  .icon-md {
+    @apply h-5 w-5
+  }
+
+  .icon-lg {
+    @apply h-6 w-6
   }
 }
 
@@ -29,6 +54,10 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-backgroundMain text-foregroundMain;
   }
+}
+
+@layer components {
+ 
 }
