@@ -6,23 +6,23 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 export const MenuHeader = () => {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex gap-1">
+      <div className="flex items-center gap-1">
         <Input
           className="border-0 shadow-none border-b-2 border-gray-200 rounded-b-none"
           type="text"
           placeholder="Número do ticket" />
 
-        <Button variant="outline" size="icon" className="button-icon">
-          <Search className="icon-md" />
+        <Button variant="outline" size="iconMd" className="button-icon">
+          <Search />
         </Button>
       </div>
 
-      <Button variant="outline" size="icon" className="button-icon">
-        <MessageSquareText className="icon-md" />
+      <Button variant="outline" size="iconMd" className="button-icon">
+        <MessageSquareText />
       </Button>
 
-      <Button variant="outline" size="icon" className="button-icon">
-        <Bell className="icon-md" />
+      <Button variant="outline" size="iconMd" className="button-icon">
+        <Bell />
       </Button>
 
       <Avatar>

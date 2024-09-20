@@ -15,16 +15,16 @@ export const BreadcrumbComponent = () => {
           const isLast = index === pathSegments.length - 1;
 
           return (
-            <>
+            <React.Fragment key={`href-${href}`}>
               {
                 isLast ? (
-                  <BreadcrumbItem>
+                  <BreadcrumbItem >
                     <BreadcrumbLink >{segment}</BreadcrumbLink>
                   </BreadcrumbItem>
                 ) :
                   (
                     <>
-                      <BreadcrumbItem>
+                      <BreadcrumbItem >
                         <BreadcrumbLink
                           href={href}>
                           {segment}
@@ -34,7 +34,7 @@ export const BreadcrumbComponent = () => {
                     </>
                   )
               }
-            </>
+            </React.Fragment>
           );
         }
         )}
