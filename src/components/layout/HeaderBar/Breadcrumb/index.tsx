@@ -7,7 +7,7 @@ export const BreadcrumbComponent = () => {
   const pathSegments = pathname.split("/").filter((segment: string) => segment !== "");
 
   return (
-    <Breadcrumb className="relative top-[18px] left-0 w-[50%]">
+    <Breadcrumb className="relative top-[27px] left-0 w-[50%]">
       <BreadcrumbList>
         {pathSegments.map((segment, index) => {
           const href = `/${pathSegments.slice(0, index + 1).join("/")}`;

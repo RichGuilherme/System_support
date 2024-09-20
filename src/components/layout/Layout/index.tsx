@@ -1,4 +1,4 @@
-import { SiderBar } from "@/components/root/SiderBar";
+import { SiderBar } from "../SiderBar";
 import React from "react";
 import { HeaderBar } from "../HeaderBar";
 
