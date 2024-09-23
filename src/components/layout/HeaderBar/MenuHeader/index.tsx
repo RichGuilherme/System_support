@@ -2,6 +2,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, MessageSquareText, Bell } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { ModeToggle } from "./ModeToggle";
 
 export const MenuHeader = () => {
   return (
@@ -25,6 +26,7 @@ export const MenuHeader = () => {
         <Bell />
       </Button>
 
+      <ModeToggle />
       <Avatar>
         <AvatarImage
           className="w-10 h-10 rounded-full"

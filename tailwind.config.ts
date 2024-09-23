@@ -10,13 +10,62 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        backgroundMain: "hsl(var(--background))",
-        foregroundMain: "hsl(var(--foreground))",
+        backgroundMain: "var(--background)",
+        foregroundMain: "var(--foreground)",
+
         text_highlight: "var(--color-text)",
-        border: "hsl(var(--border))",
+
+        border: "var(--border)",
+
         sidebar: {
-          bgSidebar: "#03363D"
-        }
+          DEFAULT: "var(--azul-800)",
+          foreground: "var(--text-input)"
+        },
+
+        input: "var(--input)",
+        ring: "var(--ring)",
+
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        backgroundSecondary: "var(--backgroundSecondary))",
+        foregroundSecondary: "var(--foregroundSecondary))",
+
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+        },
+        destructive: {
+          DEFAULT: "var(--destructive))",
+          foreground: "var(--destructive-foreground)",
+        },
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
+        },
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
+        },
+        popover: {
+          DEFAULT: "var(--popover))",
+          foreground: "var(--popover-foreground)",
+        },
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
+        },
+      },
+      backgroundColor: {
+        "custom-gray": "(0, 0%, 90%, 0.1)",
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         frameComponents: {
