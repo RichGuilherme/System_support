@@ -17,13 +17,13 @@ export const BreadcrumbComponent = () => {
     .filter((segment: string) => segment !== "");
 
   return (
-    <Breadcrumb className="relative left-0 top-[20px] w-[50%]">
+    <Breadcrumb className="relative left-0 top-[20px] z-10 w-[50%]">
       <BreadcrumbList>
         <BreadcrumbItem
           className="px-6"
           style={{
-            zIndex: 100,
-            boxShadow: "10px 0px 14px -8px rgba(0,0,0,.4)",
+            zIndex: 20,
+            boxShadow: "8px 0px 17px -6px rgba(0, 0, 0, .4)",
           }}
         >
           <BreadcrumbLink asChild>
@@ -41,9 +41,9 @@ export const BreadcrumbComponent = () => {
               {isLast ? (
                 <BreadcrumbItem
                   style={{
-                    right: `${(index + 1) * 27}px`,
+                    right: `${(index + 1) * 28}px`,
                     zIndex: -100,
-                    backgroundColor: "var(--azul-400)",
+                    backgroundColor: "var(--azul-800)",
                     color: "#fff",
                   }}
                 >
@@ -53,9 +53,9 @@ export const BreadcrumbComponent = () => {
                 <>
                   <BreadcrumbItem
                     style={{
-                      right: `${(index + 1) * 27}px`,
+                      right: `${(index + 1) * 28}px`,
                       zIndex: `${-index + 1}`,
-                      boxShadow: "10px 0px 14px -8px rgba(0,0,0,.4)",
+                      boxShadow: "8px 0px 17px -6px rgba(0, 0, 0, .4)",
                     }}
                   >
                     <BreadcrumbLink href={href}>{segment}</BreadcrumbLink>

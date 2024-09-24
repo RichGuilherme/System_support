@@ -13,13 +13,21 @@ const config: Config = {
         backgroundMain: "var(--background)",
         foregroundMain: "var(--foreground)",
 
-        text_highlight: "var(--color-text)",
-
         border: "var(--border)",
+
+        highlight: {
+          verdinho: "var(--verdinho-300)",
+          primary: "var(--primary)",
+        },
 
         sidebar: {
           DEFAULT: "var(--azul-800)",
-          foreground: "var(--text-input)",
+          foreground: "var(--text-white)",
+        },
+
+        textSimples: {
+          200: "var(--text-simples-200)",
+          400: "var(--text-simples-400)",
         },
 
         input: "var(--input)",
@@ -27,13 +35,14 @@ const config: Config = {
 
         background: "var(--background)",
         foreground: "var(--foreground)",
-        backgroundSecondary: "var(--backgroundSecondary))",
-        foregroundSecondary: "var(--foregroundSecondary))",
+        backgroundSecondary: "var(--backgroundSecondary)",
+        foregroundSecondary: "var(--foregroundSecondary)",
 
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
         },
+
         secondary: {
           DEFAULT: "var(--secondary)",
           foreground: "var(--secondary-foreground)",
@@ -50,17 +59,18 @@ const config: Config = {
           DEFAULT: "var(--accent)",
           foreground: "var(--accent-foreground)",
         },
+        accentNeutral: {
+          DEFAULT: "var(--accentNeutral)",
+          foreground: "var(--accent-foregroundNeutral)",
+        },
         popover: {
-          DEFAULT: "var(--popover))",
+          DEFAULT: "var(--popover)",
           foreground: "var(--popover-foreground)",
         },
         card: {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
-      },
-      backgroundColor: {
-        "custom-gray": "#E5E5E51A",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -6,7 +6,7 @@ import { MenuHeader } from "./MenuHeader";
 
 export const HeaderBar = () => {
   return (
-    <header className="flex h-14 w-full justify-between border-b border-gray-200 px-8">
+    <header className="bg-backgroundSecondary relative z-50 flex h-14 w-full justify-between overflow-hidden border-b border-border px-8">
       <BreadcrumbComponent />
       <MenuHeader />
     </header>

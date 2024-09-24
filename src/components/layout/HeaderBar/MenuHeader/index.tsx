@@ -6,31 +6,34 @@ import { ModeToggle } from "./ModeToggle";
 
 export const MenuHeader = () => {
   return (
-    <div className="flex items-center gap-4">
-      <div className="flex items-center gap-1">
+    <div className="flex items-center gap-5">
+      <div className="flex items-center space-x-3">
         <Input
-          className="border-0 shadow-none border-b-2 border-gray-200 rounded-b-none"
+          className="rounded-b-none border-0 border-b-2 border-gray-200 shadow-none"
           type="text"
-          placeholder="Número do ticket" />
+          placeholder="Número do ticket"
+        />
 
-        <Button variant="outline" size="iconMd" className="button-icon">
+        <Button variant="ghost" size="iconMd">
           <Search />
         </Button>
       </div>
 
-      <Button variant="outline" size="iconMd" className="button-icon">
+      <Button variant="ghost" size="iconMd">
         <MessageSquareText />
       </Button>
 
-      <Button variant="outline" size="iconMd" className="button-icon">
+      <Button variant="ghost" size="iconMd">
         <Bell />
       </Button>
 
       <ModeToggle />
       <Avatar>
         <AvatarImage
-          className="w-10 h-10 rounded-full"
-          src="https://github.com/shadcn.png" alt="avatar" />
+          className="h-10 w-10 rounded-full"
+          src="https://github.com/shadcn.png"
+          alt="avatar"
+        />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
     </div>
