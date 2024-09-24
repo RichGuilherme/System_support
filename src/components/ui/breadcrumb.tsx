@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const Breadcrumb = React.forwardRef<
   HTMLElement,
   React.ComponentPropsWithoutRef<"nav"> & {
-    separator?: React.ReactNode
+    separator?: React.ReactNode;
   }
 >(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />);
 Breadcrumb.displayName = "Breadcrumb";
@@ -19,8 +19,8 @@ const BreadcrumbList = React.forwardRef<
   <ol
     ref={ref}
     className={cn(
-      "flex flex-nowrap break-words text-sm text-muted-foreground ",
-      className
+      "flex flex-nowrap break-words text-sm text-muted-foreground",
+      className,
     )}
     {...props}
   />
@@ -33,7 +33,10 @@ const BreadcrumbItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <li
     ref={ref}
-    className={cn("inline-flex items-end relative bg-backgroundSecondary pl-9 pr-3 py-2 rounded-full border-[#F0F0F0] text-text_highlight", className)}
+    className={cn(
+      "bg-backgroundSecondary relative inline-flex items-end rounded-full border-[#F0F0F0] py-2 pl-9 pr-3 text-text_highlight",
+      className,
+    )}
     {...props}
   />
 ));
@@ -42,7 +45,7 @@ BreadcrumbItem.displayName = "BreadcrumbItem";
 const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentPropsWithoutRef<"a"> & {
-    asChild?: boolean
+    asChild?: boolean;
   }
 >(({ asChild, className, ...props }, ref) => {
   const Comp = asChild ? Slot : "a";
@@ -50,7 +53,10 @@ const BreadcrumbLink = React.forwardRef<
   return (
     <Comp
       ref={ref}
-      className={cn("transition-colors hover:text-foreground text-sm", className)}
+      className={cn(
+        "text-sm transition-colors hover:text-foreground",
+        className,
+      )}
       {...props}
     />
   );

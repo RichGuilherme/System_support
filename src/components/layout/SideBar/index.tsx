@@ -19,31 +19,27 @@ export const SideBar = () => {
   };
 
   return (
-    <aside className="flex flex-col items-center bg-sidebar h-full w-64 px-1 py-4 space-y-4 text-sidebar-foreground">
-      <Image
-        alt="Logo Info"
-        src={logoImg}
-        width={60}
-        height={58}
-      />
+    <aside className="flex h-full w-64 flex-col items-center space-y-4 bg-sidebar px-1 py-4 text-sidebar-foreground">
+      <Image alt="Logo Info" src={logoImg} width={60} height={58} />
 
       <Button
         variant="outline"
-        className="flex gap-1 py-2 px-1 w-10/12 text-sm border-[#b5d333] rounded-2xl text-sidebar-foreground">
+        className="flex w-10/12 gap-1 rounded-2xl border-[#b5d333] px-1 py-2 text-sm text-sidebar-foreground"
+      >
         <Plus className="icon-sm text-sidebar-foreground" />
         Abrir novo ticket
       </Button>
 
-      <nav className="mt-4 py-4 flex flex-col space-y-2  border-b border-zinc-500 ">
+      <nav className="mt-4 flex flex-col space-y-2 border-b border-zinc-500 py-4">
         {Routers.map((router) => {
           const IconComponent = router.icon;
 
           return (
-            <Button key={router.name}
-
+            <Button
+              key={router.name}
               className={cn(
-                "text-base gap-3 justify-start px-3 w-48 py-3 text-sidebar-foreground font-extralight hover:bg-custom-gray hover:font-normal",
-                firstSegment === `${router.name}` && "bg-custom-gray"
+                "w-48 justify-start gap-3 px-3 py-3 text-base font-extralight text-sidebar-foreground hover:bg-custom-gray hover:font-normal",
+                firstSegment === `${router.name}` && "bg-custom-gray",
               )}
               onClick={() => handleButtonNav(router.url)}
             >

@@ -19,7 +19,7 @@ const config: Config = {
 
         sidebar: {
           DEFAULT: "var(--azul-800)",
-          foreground: "var(--text-input)"
+          foreground: "var(--text-input)",
         },
 
         input: "var(--input)",
@@ -60,7 +60,7 @@ const config: Config = {
         },
       },
       backgroundColor: {
-        "custom-gray": "(0, 0%, 90%, 0.1)",
+        "custom-gray": "#E5E5E51A",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -69,14 +69,14 @@ const config: Config = {
       },
       keyframes: {
         frameComponents: {
-          "from": { opacity: "0.1" },
-          "to": { opacity: "1" },
+          from: { opacity: "0.1" },
+          to: { opacity: "1" },
         },
       },
       animation: {
         frameComponents: "frameComponents 0.4s ease-out",
       },
-    }
+    },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],

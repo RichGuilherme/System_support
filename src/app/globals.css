@@ -34,37 +34,37 @@
 
 @layer base {
   :root {
-    --background: #F5F6FA;
+    --background: #f5f6fa1e;
     --backgroundSecondary: #fff;
-    --foreground: #1C2338; 
+    --foreground: #1c2338;
     --foregroundSecondary: #1d253b;
 
-    --muted: #F0F4F9; 
+    --muted: #F0F4F9;
     --muted-foreground: #6F7D92;
- 
-    --popover: #FFFFFF; 
-    --popover-foreground: #1C2338; 
- 
-    --border: #DDE4ED; 
-    --input: #DDE4ED; 
- 
-    --card: #FFFFFF; 
-    --card-foreground: #1C2338; 
- 
-    --primary: #1C2338; 
-    --primary-foreground: #F0F4F9; 
- 
-    --secondary: #F0F4F9; 
-    --secondary-foreground: #1C2338; 
- 
+
+    --popover: #FFFFFF;
+    --popover-foreground: #1C2338;
+
+    --border: #DDE4ED;
+    --input: #DDE4ED;
+
+    --card: #FFFFFF;
+    --card-foreground: #1C2338;
+
+    --primary: #1C2338;
+    --primary-foreground: #F0F4F9;
+
+    --secondary: #F0F4F9;
+    --secondary-foreground: #1C2338;
+
     --accent: #b5d333;
     --accent-foreground: #fff;
- 
-    --destructive: #FF0000; 
-    --destructive-foreground: #F0F4F9; 
- 
-    --ring: #8495B0; 
- 
+
+    --destructive: #FF0000;
+    --destructive-foreground: #F0F4F9;
+
+    --ring: #8495B0;
+
     --radius: 0.5rem;
 
     --text-input: #fff;
@@ -80,35 +80,35 @@
   .dark {
     --background: #1E1E2F;
     --backgroundSecondary: #27293D;
-    --foreground: #D5DBE9; 
+    --foreground: #D5DBE9;
     --foregroundSecondary: #fff;
- 
-    --muted: #1C2338; 
-    --muted-foreground: #8D99AC; 
- 
+
+    --muted: #1C2338;
+    --muted-foreground: #8D99AC;
+
     --accent: #b5d333;
     --accent-foreground: #fff;
- 
+
     --popover: #0C0F19;
-    --popover-foreground: #8495B0; 
- 
-    --border: #2B3447; 
-    --input: #2B3447; 
- 
-    --card: #0C0F19; 
-    --card-foreground: #D5DBE9; 
- 
-    --primary: #F0F4F9; 
-    --primary-foreground: #030409; 
- 
-    --secondary: #1C2338; 
-    --secondary-foreground: #F0F4F9; 
- 
-    --destructive: #A10000; 
-    --destructive-foreground: #F0F4F9; 
- 
-    --ring: #2B3447; 
- 
+    --popover-foreground: #8495B0;
+
+    --border: #2B3447;
+    --input: #2B3447;
+
+    --card: #0C0F19;
+    --card-foreground: #D5DBE9;
+
+    --primary: #F0F4F9;
+    --primary-foreground: #030409;
+
+    --secondary: #1C2338;
+    --secondary-foreground: #F0F4F9;
+
+    --destructive: #A10000;
+    --destructive-foreground: #F0F4F9;
+
+    --ring: #2B3447;
+
     --radius: 0.5rem;
 
     --text-input: #fff;
@@ -132,6 +132,4 @@
   }
 }
 
-@layer components {
- 
-}
+@layer components {}
