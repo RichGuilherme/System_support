@@ -1,5 +1,5 @@
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/atoms/input";
+import { Button } from "@/components/ui/atoms/button";
 import { Search, MessageSquareText, Bell } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { ModeToggle } from "./ModeToggle";
@@ -9,7 +9,7 @@ export const MenuHeader = () => {
     <div className="flex items-center gap-5">
       <div className="flex items-center space-x-3">
         <Input
-          className="rounded-b-none border-0 border-b-2 border-gray-200 shadow-none"
+          className="rounded-full border-0 border-b-2 border-border bg-backgroundSecondary py-5 shadow-none"
           type="text"
           placeholder="Número do ticket"
         />

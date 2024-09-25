@@ -9,7 +9,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <div className="h-full w-full">
         <HeaderBar />
-        <main className="">{children}</main>
+        <main className="h-auto w-full p-6">{children}</main>
       </div>
     </div>
   );

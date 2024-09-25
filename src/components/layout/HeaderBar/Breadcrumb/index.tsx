@@ -5,7 +5,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   Breadcrumb,
-} from "@/components/ui/breadcrumb";
+} from "@/components/ui/atoms/breadcrumb";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -17,7 +17,7 @@ export const BreadcrumbComponent = () => {
     .filter((segment: string) => segment !== "");
 
   return (
-    <Breadcrumb className="relative left-0 top-[20px] z-10 w-[50%]">
+    <Breadcrumb className="z-10 flex w-[50%] items-center">
       <BreadcrumbList>
         <BreadcrumbItem
           className="px-6"
@@ -40,10 +40,10 @@ export const BreadcrumbComponent = () => {
             <React.Fragment key={`href-${href}`}>
               {isLast ? (
                 <BreadcrumbItem
+                  className="gradient_azul"
                   style={{
                     right: `${(index + 1) * 28}px`,
                     zIndex: -100,
-                    backgroundColor: "var(--azul-800)",
                     color: "#fff",
                   }}
                 >
