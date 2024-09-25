@@ -17,8 +17,27 @@ export const Routers = [
   {
     title: "Dashboard",
     name: "dashboard",
-    url: "/dashboard",
-    icon: LayoutDashboardIcon
+    icon: LayoutDashboardIcon,
+    children: [
+      {
+        title: "Tickets",
+        name: "dashboard/tickets",
+        route: "/dashboard/tickets",
+        icon: TicketsIcon,
+      },
+      {
+        title: "Chats",
+        name: "dashbord/chats",
+        route: "/dashboard/chats",
+        icon: MessageSquareTextIcon,
+      },
+      {
+        title: "Recursos",
+        name: "dashbord/recursos",
+        route: "/dashboard/recursos",
+        icon: MonitorCogIcon,
+      }
+    ],
   },
   {
     title: "Tickets",
