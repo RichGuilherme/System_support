@@ -1,3 +1,5 @@
-export const DashBoard = () => {
-  return <h1></h1>;
+import DashboardTickets from "./Tickets";
+
+export const Dashboard = () => {
+  return <DashboardTickets />;
 };
