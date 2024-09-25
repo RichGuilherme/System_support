@@ -34,7 +34,7 @@ const BreadcrumbItem = React.forwardRef<
   <li
     ref={ref}
     className={cn(
-      "relative inline-flex items-end rounded-full border-[#F0F0F0] bg-background py-2 pl-9 pr-3",
+      "relative inline-flex items-end rounded-full border-[#F0F0F0] bg-backgroundSecondary py-2 pl-9 pr-3",
       className,
     )}
     {...props}
