@@ -14,6 +14,22 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .gradient_color-topLeft {
+    @apply bg-gradient-to-tl from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
+  }
+
+  .gradient_color-left {
+    @apply bg-gradient-to-l from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
+  }
+
+  .gradient_color-meio {
+    @apply bg-gradient-radial from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
+  }
+
+  .gradient_azul {
+    @apply bg-gradient-to-t from-[var(--gradient-color-200)] to-[var(--gradient-color-250)]
+  }
 }
 
 @layer base {
@@ -53,6 +69,11 @@
 
     --radius: 0.5rem;
 
+    --gradient-color-100:hsla(225, 100%, 99%, .95);
+    --gradient-color-150: rgba(228, 230, 243, .50);
+    --gradient-color-200:rgb(13, 45, 125);
+    --gradient-color-250: rgb(10, 33, 94);
+
     --text-simples-200: #acb8cb;
     --text-simples-400: #484C53;
     --text-white: #fff;
@@ -60,7 +81,8 @@
     --azul-200: #4868DB;
     --azul-400: #1b3ba3;
     --azul-600: #072488;
-    --azul-800: #0D2D7C;
+    --azul-800: #0d2d7d;
+    --azul-900: #071846;
 
     --verdinho-300: #b5d333;
     --verdinho-350: #b6d3336e;
@@ -103,15 +125,18 @@
 
     --radius: 0.5rem;
 
-    --text-simples-200: #acb8cb;
+    --gradient-color-100:#2d2d4685;
+    --gradient-color-150: #1E1E2F;
+
+    --text-simples-200: #d6dae2;
     --text-simples-400: #484C53;
-    
     --text-white: #fff;
 
     --azul-200: #4868DB;
     --azul-400: #1b3ba3;
     --azul-600: #072488;
     --azul-800: #0D2D7C;
+    --azul-900: #071846;
 
     --verdinho-300: #b5d333;
     --verdinho-350: #b6d3336e;

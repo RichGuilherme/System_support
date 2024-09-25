@@ -26,6 +26,7 @@ const config: Config = {
         },
 
         textSimples: {
+          white: "var(--text-white)",
           200: "var(--text-simples-200)",
           400: "var(--text-simples-400)",
         },
@@ -82,6 +83,9 @@ const config: Config = {
           from: { opacity: "0.1" },
           to: { opacity: "1" },
         },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       animation: {
         frameComponents: "frameComponents 0.4s ease-out",
