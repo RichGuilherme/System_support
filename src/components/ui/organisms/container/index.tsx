@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 
 type gradientType =
   | "gradient_color-topLeft"
@@ -10,7 +10,10 @@ type ContainerProps = {
   height: string;
   gradientColor?: gradientType;
   gridSpan?: string;
-  children: React.ReactNode;
+  title: string;
+  subTitle?: ReactNode;
+  rightContent?: ReactNode;
+  children: ReactNode;
 };
 
 const Container = ({
@@ -18,15 +21,28 @@ const Container = ({
   height,
   gradientColor,
   gridSpan,
+  title,
+  subTitle,
+  rightContent,
   children,
   ...props
 }: ContainerProps) => {
   return (
     <section
-      className={`${gradientColor || "gradient_color-topLeft"} rounded-2xl px-3 py-5 shadow-md ${gridSpan}`}
+      className={`${gradientColor || "gradient_color-topLeft"} rounded-2xl px-4 py-5 shadow-md ${gridSpan}`}
       style={{ width: width, height: height }}
       {...props}
     >
+      <div className="mb-4 flex items-start justify-between">
+        <div className="flex flex-col justify-start">
+          <p className="text-lg font-semibold">{title}</p>
+
+          <div className="">{subTitle}</div>
+        </div>
+
+        {rightContent}
+      </div>
+
       {children}
     </section>
   );
