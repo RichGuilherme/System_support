@@ -30,7 +30,7 @@ const Container = ({
 }: ContainerProps) => {
   return (
     <section
-      className={`${gradientColor || "gradient_color-topLeft"} inline-flex flex-col space-y-3 rounded-2xl px-4 py-5 text-sm shadow-md ${gridSpan}`}
+      className={`${gradientColor || "gradient_color-topLeft"} inline-flex flex-col space-y-3 rounded-2xl px-4 pb-8 pt-5 text-sm shadow-md ${gridSpan}`}
       style={{ width: width, height: height, ...props }}
       {...props}
     >
