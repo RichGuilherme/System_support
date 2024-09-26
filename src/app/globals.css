@@ -23,8 +23,12 @@
     @apply bg-gradient-to-l from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
   }
 
+  .gradient_color-right {
+    @apply bg-gradient-to-r from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
+  }
+
   .gradient_color-meio {
-    @apply bg-gradient-radial from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
+    @apply bg-gradient-radial from-[var(--gradient-color-100)] to-[var(--gradient-color-150)] to-90%
   }
 
   .gradient_azul {
@@ -70,11 +74,12 @@
     --radius: 0.5rem;
 
     --gradient-color-100:hsla(225, 100%, 99%, .95);
-    --gradient-color-150: rgba(228, 230, 243, .50);
+    --gradient-color-150: rgba(215, 217, 233, 0.5);
     --gradient-color-200:rgb(13, 45, 125);
     --gradient-color-250: rgb(10, 33, 94);
 
     --text-simples-200: #acb8cb;
+    --text-simples-300: #6F7D92;
     --text-simples-400: #484C53;
     --text-white: #fff;
 
@@ -129,6 +134,7 @@
     --gradient-color-150: #1E1E2F;
 
     --text-simples-200: #d6dae2;
+    --text-simples-300: #8D99AC;
     --text-simples-400: #484C53;
     --text-white: #fff;
 

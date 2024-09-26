@@ -28,6 +28,7 @@ const config: Config = {
         textSimples: {
           white: "var(--text-white)",
           200: "var(--text-simples-200)",
+          300: "var(--text-simples-300)",
           400: "var(--text-simples-400)",
         },
 
