@@ -2,27 +2,32 @@
 
 import { Button } from "@/components/ui/atoms/button";
 import { Routers } from "@/constant";
-import {
-  ChevronDownIcon,
-  HeadsetIcon,
-  icons,
-  LogOutIcon,
-  Plus,
-} from "lucide-react";
+
 import { usePathname, useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { ChevronDownIcon, HeadsetIcon, LogOutIcon, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Collapsible } from "@/components/ui/atoms/collapsible";
+import {
+  Collapsible,
+  CollapsibleTrigger,
+} from "@/components/ui/atoms/collapsible";
+import { CollapsibleContent } from "@radix-ui/react-collapsible";
+import React, { useRef } from "react";
 
 export const SideBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const router = useRouter();
   const pathname = usePathname();
   const firstSegment = pathname.split("/")[1];
 
+  const collapsibleRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
   const handleButtonNav = (url: string) => {
     router.push(url);
+
+    Object.values(collapsibleRefs.current).forEach((collapsible) => {
+      if (collapsible?.getAttribute("data-state") === "open") {
+        collapsible.querySelector("button")?.click();
+      }
+    });
   };
 
   const userOn = { user: "Richard Guilherme" };
@@ -36,6 +41,7 @@ export const SideBar = () => {
         </p>
 
         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#D9D9D9] to-transparent" />
+        {/* barra divisoria */}
       </div>
 
       <Button
@@ -46,36 +52,94 @@ export const SideBar = () => {
         Abrir novo ticket
       </Button>
 
-      <nav className="mt-2 flex h-full w-full flex-col justify-between">
-        <Collapsible className="flex flex-col space-y-1 py-4">
+      <nav className="flex h-full w-full flex-col justify-between">
+        <ul>
           {Routers.map((router) => {
             const IconComponent = router.icon;
 
             return (
-              <Button
-                key={`name-${router.name}`}
-                className={cn(
-                  "w-full justify-between rounded-none px-5 py-3 text-sm font-light text-textSimples-200 hover:text-sidebar-foreground",
-                  firstSegment === `${router.name}` &&
-                    "bg-gradient-to-r from-[var(--verdinho-350)] from-10% font-medium text-sidebar-foreground",
-                )}
-              >
-                <div className="flex flex-row gap-3">
-                  <IconComponent
-                    size={20}
+              <li key={`buttonNav-${router.name}`}>
+                {router.child === false ? (
+                  <Button
                     className={cn(
+                      "flex w-full flex-row justify-between rounded-none px-5 py-3 text-sm font-light text-textSimples-200 hover:text-sidebar-foreground",
                       firstSegment === `${router.name}` &&
-                        "text-highlight-verdinho",
+                        "bg-gradient-to-r from-[var(--verdinho-350)] from-10% font-medium text-sidebar-foreground",
                     )}
-                  />
-                  {router.title}
-                </div>
+                    onClick={() => handleButtonNav(router.url)}
+                  >
+                    <div className="flex flex-row gap-3">
+                      <IconComponent
+                        size={20}
+                        className={cn(
+                          firstSegment === `${router.name}` &&
+                            "text-highlight-verdinho",
+                        )}
+                      />
+                      {router.title}
+                    </div>
+                  </Button>
+                ) : (
+                  <Collapsible
+                    ref={(el) => {
+                      collapsibleRefs.current[router.name] = el;
+                    }}
+                  >
+                    <CollapsibleTrigger className="group w-full">
+                      <div
+                        className={cn(
+                          "group flex w-full flex-row justify-between rounded-none px-5 py-3 text-sm font-light text-textSimples-200 hover:text-sidebar-foreground",
+                          firstSegment === `${router.name}` &&
+                            "bg-gradient-to-r from-[var(--verdinho-350)] from-10% font-medium text-sidebar-foreground",
+                        )}
+                      >
+                        <div className="flex flex-row gap-3">
+                          <IconComponent
+                            size={20}
+                            className={cn(
+                              firstSegment === `${router.name}` &&
+                                "text-highlight-verdinho",
+                            )}
+                          />
+                          {router.title}
+                        </div>
 
-                {router.children && <ChevronDownIcon size={18} />}
-              </Button>
+                        {router.children && (
+                          <ChevronDownIcon
+                            size={18}
+                            className={cn(
+                              "hidden group-hover:block group-data-[state=open]:block",
+                            )}
+                          />
+                        )}
+                      </div>
+                    </CollapsibleTrigger>
+
+                    {router.children && (
+                      <CollapsibleContent className="flex flex-col items-start bg-[var(--azul-900)]">
+                        {router.children.map((router) => {
+                          const IconComponent = router.icon;
+
+                          return (
+                            <Button
+                              key={`collpsibleButton-${router.name}`}
+                              variant="ghost"
+                              className="flex w-full justify-start gap-3 rounded-none py-2 pl-8 text-sm font-light text-textSimples-200"
+                              onClick={() => handleButtonNav(router.url)}
+                            >
+                              <IconComponent size={20} />
+                              {router.title}
+                            </Button>
+                          );
+                        })}
+                      </CollapsibleContent>
+                    )}
+                  </Collapsible>
+                )}
+              </li>
             );
           })}
-        </Collapsible>
+        </ul>
 
         <Button
           variant="ghost"
