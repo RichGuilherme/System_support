@@ -1,0 +1,32 @@
+export const SERVICEDUEDATE = {
+  ALL: 24,
+  TODAY: 6,
+  TOMORROW: 3,
+  AFTER: 14
+};
+
+export const SERVICESOLUCTION = {
+  ALL: 30,
+  TODAY: 15,
+  TOMORROY: 5,
+  AFTER: 10
+};
+
+export const RESUMETICKETS = {
+  ALL: 50,
+  MY: 0,
+  NOTATTENDED: 24,
+  INPROGRESS: 20,
+  STOPED: 14,
+  EXPIRED: 13
+};
+
+export const UNRESPONDEDTICKETS = {
+  ALL: 5,
+  MY: 0
+};
+
+export const REVIEWSTICKETS = {
+  REVIEWSTICKETSGENERAL: 4.98,
+  REVIEWSMYTICKETS: null,
+};
