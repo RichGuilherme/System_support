@@ -62,7 +62,7 @@
     --secondary-foreground: #1C2338;
 
     --accent: #b5d333;
-    --accentNeutral: #f1f5f9;
+    --accentNeutral: #f3f4f8;
     --accent-foreground: #fff;
     --accent-foregroundNeutral: #0f172a;
 
@@ -104,7 +104,7 @@
     --muted-foreground: #8D99AC;
 
     --accent: #b5d333;
-    --accentNeutral: #f1f5f9;
+    --accentNeutral: #2c2e44;
     --accent-foreground: #fff;
     --accent-foregroundNeutral: #0f172a;
 
@@ -159,4 +159,8 @@
   }
 }
 
-@layer components {}
+@layer components {
+  .indicator-flex-container {
+    @apply flex w-full flex-row justify-between 
+  }
+}
