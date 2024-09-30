@@ -14,21 +14,21 @@ const Pending = () => {
         <IndicatorBadge
           icon={TicketSlash}
           type="Pré-tickets"
-          valueNumber={0}
+          valueIndicator={0}
           color="text-yellow-500"
         />
 
         <IndicatorBadge
           icon={ClipboardIcon}
           type="Autorizações pendentes"
-          valueNumber={0}
+          valueIndicator={0}
           color="text-cyan-500"
         />
 
         <IndicatorBadge
           icon={PlayCircleIcon}
           type="Pré-apontamentos"
-          valueNumber={9}
+          valueIndicator={9}
           color="text-blue-400"
         />
       </div>

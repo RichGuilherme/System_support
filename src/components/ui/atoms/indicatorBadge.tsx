@@ -7,7 +7,7 @@ type IndicatorBadgeProps = {
     Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
   >;
   type: string;
-  valueNumber: number;
+  valueIndicator: number | string;
   color:
     | "text-cyan-500"
     | "text-green-500"
@@ -21,7 +21,7 @@ type IndicatorBadgeProps = {
 const IndicatorBadge = ({
   icon,
   type,
-  valueNumber,
+  valueIndicator,
   color,
 }: IndicatorBadgeProps) => {
   const IconComponent = icon;
@@ -32,7 +32,7 @@ const IndicatorBadge = ({
 
       <Badge variant="ghost" className={cn("flex items-center gap-2", color)}>
         <IconComponent size={25} />
-        <span className="text-2xl">{valueNumber}</span>
+        <span className="text-2xl">{valueIndicator}</span>
       </Badge>
     </div>
   );

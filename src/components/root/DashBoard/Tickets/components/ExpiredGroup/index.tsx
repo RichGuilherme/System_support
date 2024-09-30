@@ -21,25 +21,25 @@ const ExpiredGroup = () => {
           <IndicatorBadge
             icon={Clock12Icon}
             type="Todos"
-            valueNumber={vencimentoAtendimentoData.ALL}
+            valueIndicator={vencimentoAtendimentoData.ALL}
             color="text-teal-800"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Hoje"
-            valueNumber={vencimentoAtendimentoData.TODAY}
+            valueIndicator={vencimentoAtendimentoData.TODAY}
             color="text-yellow-500"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Amanhã"
-            valueNumber={vencimentoAtendimentoData.TOMORROW}
+            valueIndicator={vencimentoAtendimentoData.TOMORROW}
             color="text-blue-400"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Depois"
-            valueNumber={vencimentoAtendimentoData.AFTER}
+            valueIndicator={vencimentoAtendimentoData.AFTER}
             color="text-cyan-500"
           />
         </div>
@@ -54,25 +54,25 @@ const ExpiredGroup = () => {
           <IndicatorBadge
             icon={Clock12Icon}
             type="Todos"
-            valueNumber={vencimentoSoluções.ALL}
+            valueIndicator={vencimentoSoluções.ALL}
             color="text-teal-800"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Hoje"
-            valueNumber={vencimentoSoluções.TODAY}
+            valueIndicator={vencimentoSoluções.TODAY}
             color="text-yellow-500"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Amanhã"
-            valueNumber={vencimentoSoluções.TOMORROY}
+            valueIndicator={vencimentoSoluções.TOMORROY}
             color="text-blue-400"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Depois"
-            valueNumber={vencimentoSoluções.AFTER}
+            valueIndicator={vencimentoSoluções.AFTER}
             color="text-cyan-500"
           />
         </div>
