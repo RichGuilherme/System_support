@@ -10,14 +10,7 @@ import Container from "@/components/ui/organisms/container";
 import dayjs from "dayjs";
 import { CheckCircle } from "lucide-react";
 import React from "react";
-import {
-  CartesianGrid,
-  LabelList,
-  Line,
-  LineChart,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import { ValueType } from "recharts/types/component/DefaultTooltipContent";
 
 const formatTime = (milliseconds: ValueType) => {
@@ -97,15 +90,20 @@ const MyAppointedHours = () => {
                   right: 18,
                 }}
               >
-                <CartesianGrid vertical={false} />
+                <CartesianGrid vertical={false} strokeDasharray="5 5" />
                 <XAxis
                   dataKey="day"
                   axisLine={false}
-                  tickMargin={8}
-                  padding={{ left: 30 }}
+                  tickLine={false}
+                  tickMargin={10}
+                  padding={{ left: 38 }}
                 />
 
-                <YAxis tickFormatter={formatTime} />
+                <YAxis
+                  tickFormatter={formatTime}
+                  axisLine={false}
+                  tickLine={false}
+                />
 
                 <ChartTooltip
                   cursor={false}
@@ -128,15 +126,7 @@ const MyAppointedHours = () => {
                   activeDot={{
                     r: 6,
                   }}
-                >
-                  <LabelList
-                    position="top"
-                    offset={12}
-                    className="fill-foreground"
-                    formatter={formatTime}
-                    fontSize={12}
-                  />
-                </Line>
+                />
 
                 <Line
                   dataKey="yesterday"
@@ -149,15 +139,7 @@ const MyAppointedHours = () => {
                   activeDot={{
                     r: 6,
                   }}
-                >
-                  <LabelList
-                    position="top"
-                    offset={12}
-                    className="fill-foreground"
-                    formatter={formatTime}
-                    fontSize={12}
-                  />
-                </Line>
+                />
               </LineChart>
             </ChartContainer>
           </CardContent>
