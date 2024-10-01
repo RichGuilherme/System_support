@@ -9,7 +9,7 @@ export const MenuHeader = () => {
     <div className="flex items-center gap-5">
       <div className="flex items-center space-x-3">
         <Input
-          className="rounded-full border-0 border-b-2 border-border bg-backgroundSecondary py-5 shadow-none"
+          className="border-border-100 rounded-full border-0 border-b-2 bg-backgroundSecondary py-5 shadow-none"
           type="text"
           placeholder="Número do ticket"
         />

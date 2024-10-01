@@ -22,7 +22,7 @@ const DashboardTickets = () => {
           <LastNotifications />
         </div>
 
-        <div className="flex w-full flex-col gap-y-4">
+        <div className="flex w-full flex-col flex-wrap gap-y-4">
           <ExpiredGroup />
           <MyAppointedHours />
           <CommitmentsGroup />

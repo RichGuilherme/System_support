@@ -13,7 +13,10 @@ const config: Config = {
         backgroundMain: "var(--background)",
         foregroundMain: "var(--foreground)",
 
-        border: "var(--border)",
+        border: {
+          100: "var(--border-100)",
+          200: "var(--border-200)",
+        },
 
         highlight: {
           verdinho: "var(--verdinho-300)",

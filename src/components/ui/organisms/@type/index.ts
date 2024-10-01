@@ -11,6 +11,7 @@ export type ContainerProps = {
   height?: string;
   gradientColor?: gradientType;
   gridSpan?: string;
+  style?: string;
   title?: string;
   subTitle?: ReactNode;
   rightContent?: ReactNode;

@@ -10,6 +10,7 @@ const Container = ({
   subTitle,
   rightContent,
   children,
+  style,
   ...props
 }: ContainerProps) => {
   return (
@@ -18,15 +19,16 @@ const Container = ({
         "inline-flex flex-col space-y-4 rounded-2xl px-4 pb-8 pt-5 text-sm shadow-md",
         gridSpan,
         gradientColor,
+        style,
       )}
-      style={{ width: width, height: height, ...props }}
+      style={{ width: width, height: height }}
       {...props}
     >
       <div className="flex items-start justify-between">
-        <div className="flex flex-col justify-start">
-          <p className="text-lg font-semibold">{title}</p>
+        <div className="flex flex-col justify-start gap-y-1">
+          <p className="text-base font-semibold">{title}</p>
 
-          <div className="text-sm font-medium text-textSimples-300">
+          <div className="flex flex-row items-center gap-1 text-sm font-medium text-textSimples-300">
             {subTitle}
           </div>
         </div>
