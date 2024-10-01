@@ -13,11 +13,7 @@ const ExpiredGroup = () => {
 
   return (
     <>
-      <Container
-        width="100%"
-        gradientColor="gradient_color-topLeft"
-        title="Vencimento de atendimento"
-      >
+      <Container width="100%" title="Vencimento de atendimento">
         <div className="indicator-flex-container">
           <IndicatorBadge
             icon={Clock12Icon}
@@ -46,11 +42,7 @@ const ExpiredGroup = () => {
         </div>
       </Container>
 
-      <Container
-        width="100%"
-        gradientColor="gradient_color-topLeft"
-        title="Vencimento de solução"
-      >
+      <Container width="100%" title="Vencimento de solução">
         <div className="indicator-flex-container">
           <IndicatorBadge
             icon={Clock12Icon}

@@ -10,11 +10,7 @@ const ReviewTicketsGroup = () => {
 
   return (
     <div className="flex gap-4">
-      <Container
-        width="50%"
-        gradientColor="gradient_color-left"
-        title="Avaliação geral de tickets (30 dias)"
-      >
+      <Container width="50%" title="Avaliação geral de tickets (30 dias)">
         <div className="flex flex-col items-center gap-3">
           {!!reviewsTickets.REVIEWSTICKETSGENERAL ? (
             <>
@@ -38,11 +34,7 @@ const ReviewTicketsGroup = () => {
         </div>
       </Container>
 
-      <Container
-        width="50%"
-        gradientColor="gradient_color-right"
-        title="Avaliação do meus tickets (30 dias)"
-      >
+      <Container width="50%" title="Avaliação do meus tickets (30 dias)">
         <div className="flex flex-col items-center gap-3">
           {!!reviewsTickets.REVIEWSMYTICKETS ? (
             <>

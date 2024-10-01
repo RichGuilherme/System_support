@@ -15,22 +15,6 @@
     text-wrap: balance;
   }
 
-  .gradient_color-topLeft {
-    @apply bg-gradient-to-tl from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
-  }
-
-  .gradient_color-left {
-    @apply bg-gradient-to-l from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
-  }
-
-  .gradient_color-right {
-    @apply bg-gradient-to-r from-[var(--gradient-color-100)] to-[var(--gradient-color-150)]
-  }
-
-  .gradient_color-meio {
-    @apply bg-gradient-radial from-[var(--gradient-color-100)] to-[var(--gradient-color-150)] to-90%
-  }
-
   .gradient_azul {
     @apply bg-gradient-to-t from-[var(--gradient-color-200)] to-[var(--gradient-color-250)]
   }
@@ -74,8 +58,6 @@
 
     --radius: 0.5rem;
 
-    --gradient-color-100:rgba(243, 246, 250, 0.95);
-    --gradient-color-150: rgba(215, 217, 233, 0.5);
     --gradient-color-200:rgb(13, 45, 125);
     --gradient-color-250: rgb(10, 33, 94);
 
@@ -136,8 +118,8 @@
 
     --radius: 0.5rem;
 
-    --gradient-color-100:#2d2d4685;
-    --gradient-color-150: #1E1E2F;
+    --gradient-color-200:rgb(13, 45, 125);
+    --gradient-color-250: rgb(10, 33, 94);
 
     --text-simples-200: #d6dae2;
     --text-simples-300: #8D99AC;

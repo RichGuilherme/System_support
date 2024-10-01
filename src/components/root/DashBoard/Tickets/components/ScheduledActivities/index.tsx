@@ -9,7 +9,6 @@ const ScheduledActivities = () => {
     <Container
       height="586px"
       width="100%"
-      gradientColor="gradient_color-meio"
       title="Atividades agendadas"
       subTitle={
         <>

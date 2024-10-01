@@ -4,12 +4,7 @@ import { ClipboardIcon, PlayCircleIcon, TicketSlash } from "lucide-react";
 
 const Pending = () => {
   return (
-    <Container
-      height="165px"
-      width="100%"
-      gradientColor="gradient_color-topLeft"
-      title="Pendentes"
-    >
+    <Container height="165px" width="100%" title="Pendentes">
       <div className="indicator-flex-container px-10">
         <IndicatorBadge
           icon={TicketSlash}

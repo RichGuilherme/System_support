@@ -18,11 +18,7 @@ const TicketStatsGroup = () => {
 
   return (
     <div className="flex justify-center gap-4">
-      <Container
-        width="50%"
-        gradientColor="gradient_color-left"
-        title="Resumo de tickets"
-      >
+      <Container width="50%" title="Resumo de tickets">
         <div className="indicator-flex-container px-7">
           <IndicatorBadge
             icon={TicketIcon}
@@ -63,11 +59,7 @@ const TicketStatsGroup = () => {
         </div>
       </Container>
 
-      <Container
-        width="50%"
-        gradientColor="gradient_color-right"
-        title="Tickets sem resposta"
-      >
+      <Container width="50%" title="Tickets sem resposta">
         <div className="indicator-flex-container px-28">
           <IndicatorBadge
             icon={TicketIcon}

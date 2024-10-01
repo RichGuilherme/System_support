@@ -57,7 +57,6 @@ const MyAppointedHours = () => {
       <Container
         height="auto"
         width="100%"
-        gradientColor="gradient_color-right"
         style="max-h-[610px] overflow-auto"
         title="Minhas horas apontadas"
       >

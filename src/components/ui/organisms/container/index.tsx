@@ -4,7 +4,6 @@ import { ContainerProps } from "../@type";
 const Container = ({
   width,
   height,
-  gradientColor,
   gridSpan,
   title,
   subTitle,
@@ -16,9 +15,8 @@ const Container = ({
   return (
     <section
       className={cn(
-        "inline-flex flex-col space-y-4 rounded-2xl px-4 pb-8 pt-5 text-sm shadow-md",
+        "inline-flex flex-col space-y-4 rounded-2xl bg-backgroundSecondary px-4 pb-8 pt-5 text-sm shadow-md",
         gridSpan,
-        gradientColor,
         style,
       )}
       style={{ width: width, height: height }}

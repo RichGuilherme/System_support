@@ -9,12 +9,7 @@ import {
 const CommitmentsGroup = () => {
   return (
     <div className="flex flex-row gap-x-4">
-      <Container
-        height="165px"
-        width="100%"
-        gradientColor="gradient_color-left"
-        title="Meus compromissos"
-      >
+      <Container height="165px" width="100%" title="Meus compromissos">
         <div className="indicator-flex-container px-2">
           <IndicatorBadge
             icon={CalendarIcon}
@@ -43,12 +38,7 @@ const CommitmentsGroup = () => {
         </div>
       </Container>
 
-      <Container
-        height="165px"
-        width="100%"
-        gradientColor="gradient_color-right"
-        title="Todos compromissos"
-      >
+      <Container height="165px" width="100%" title="Todos compromissos">
         <div className="indicator-flex-container px-2">
           <IndicatorBadge
             icon={CalendarIcon}

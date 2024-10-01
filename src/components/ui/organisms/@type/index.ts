@@ -9,7 +9,6 @@ export type gradientType =
 export type ContainerProps = {
   width?: string;
   height?: string;
-  gradientColor?: gradientType;
   gridSpan?: string;
   style?: string;
   title?: string;
