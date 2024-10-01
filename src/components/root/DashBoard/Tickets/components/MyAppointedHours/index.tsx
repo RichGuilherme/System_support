@@ -55,12 +55,13 @@ const MyAppointedHours = () => {
   return (
     <>
       <Container
-        height="549px"
+        height="auto"
         width="100%"
         gradientColor="gradient_color-right"
+        style="max-h-[610px] overflow-auto"
         title="Minhas horas apontadas"
       >
-        <Card className="bg-transparent shadow-none">
+        <Card>
           <CardHeader>
             <div className="indicator-flex-container px-24">
               <IndicatorBadge
@@ -85,7 +86,7 @@ const MyAppointedHours = () => {
                 accessibilityLayer
                 data={chartData}
                 margin={{
-                  top: 20,
+                  top: 10,
                   left: 0,
                   right: 18,
                 }}
@@ -95,7 +96,7 @@ const MyAppointedHours = () => {
                   dataKey="day"
                   axisLine={false}
                   tickLine={false}
-                  tickMargin={10}
+                  tickMargin={7}
                   padding={{ left: 38 }}
                 />
 
