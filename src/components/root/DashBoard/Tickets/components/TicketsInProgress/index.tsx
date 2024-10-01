@@ -1,16 +1,7 @@
 import Container from "@/components/ui/organisms/container";
-import NavMenu from "./NavMenu";
-import PieChart from "./PieChart";
-import { useState } from "react";
+import PieChartComponent from "./PieChart";
 
 const TicketsInProgress = () => {
-  const [data, setData] = useState({
-    responsaveis: [],
-    mesas: [],
-    clientes: [],
-    tiposDeRecursos: [],
-  });
-
   return (
     <>
       <Container
@@ -19,8 +10,7 @@ const TicketsInProgress = () => {
         gradientColor="gradient_color-meio"
         title="Tickets em andamento"
       >
-        <NavMenu />
-        <PieChart />
+        <PieChartComponent />
       </Container>
     </>
   );

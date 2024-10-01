@@ -1,0 +1,66 @@
+{
+  "chartData": [
+    {
+      "user": "Alice Souza",
+      "byResponsible": 120,
+      "byTable": 50,
+      "byClient": 30,
+      "ByTypeResources": 20
+    },
+    {
+      "user": "Bruno Henrique",
+      "byResponsible": 150,
+      "byTable": 60,
+      "byClient": 45,
+      "ByTypeResources": 25
+    },
+    {
+      "user": "Carlos Pereira",
+      "byResponsible": 100,
+      "byTable": 70,
+      "byClient": 40,
+      "ByTypeResources": 35
+    },
+    {
+      "user": "Daniela Lima",
+      "byResponsible": 130,
+      "byTable": 40,
+      "byClient": 55,
+      "ByTypeResources": 30
+    },
+    {
+      "user": "Elias Martins",
+      "byResponsible": 110,
+      "byTable": 65,
+      "byClient": 50,
+      "ByTypeResources": 40
+    }
+  ],
+  "userData": [
+    {
+      "name": "Alice Souza",
+      "tickets": 8,
+      "avatarUrl": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    {
+      "name": "Bruno Henrique",
+      "tickets": 12,
+      "avatarUrl": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    {
+      "name": "Carlos Pereira",
+      "tickets": 9,
+      "avatarUrl": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    {
+      "name": "Daniela Lima",
+      "tickets": 15,
+      "avatarUrl": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+      "name": "Elias Martins",
+      "tickets": 7,
+      "avatarUrl": "https://randomuser.me/api/portraits/men/5.jpg"
+    }
+  ]
+}
