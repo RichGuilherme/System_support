@@ -1,4 +1,5 @@
 import Container from "@/components/ui/organisms/container";
+import React from "react";
 
 const LastNotifications = () => {
   return (

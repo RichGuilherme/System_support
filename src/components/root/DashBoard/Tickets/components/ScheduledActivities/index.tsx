@@ -1,6 +1,7 @@
 import Container from "@/components/ui/organisms/container";
 import TableScheduleActivies from "./table";
 import { CalendarCheckIcon } from "lucide-react";
+import React from "react";
 
 const ScheduledActivities = () => {
   const count = 2;
