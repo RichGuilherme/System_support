@@ -12,17 +12,17 @@ import MyAppointedHours from "./components/MyAppointedHours";
 
 const DashboardTickets = () => {
   return (
-    <div className="flex flex-col gap-y-4">
+    <div className="flex w-full flex-col gap-y-4">
       <TicketStatsGroup />
 
-      <div className="flex gap-4">
-        <div className="w-full space-y-5">
+      <div className="flex w-full gap-4">
+        <div className="flex min-w-[49.5%] flex-col space-y-4">
           <TicketsInProgress />
           <ReviewTicketsGroup />
           <LastNotifications />
         </div>
 
-        <div className="flex w-full flex-col flex-wrap gap-y-4">
+        <div className="flex min-w-[49.5%] flex-col flex-wrap gap-y-4">
           <ExpiredGroup />
           <MyAppointedHours />
           <CommitmentsGroup />
