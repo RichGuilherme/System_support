@@ -14,11 +14,34 @@ import {
 } from "@/components/ui/atoms/chart";
 import { AvatarImage } from "@radix-ui/react-avatar";
 import { useEffect, useMemo, useState } from "react";
-import { Label, Pie, PieChart } from "recharts";
+import { Label, Pie, PieChart, Sector } from "recharts";
 import jsonData from "@/components/data/mockups/pieChart.json";
 import { cn } from "@/lib/utils";
+import { PieSectorDataItem } from "recharts/types/polar/Pie";
 
-const mapValues = {
+type ChartData = {
+  fill: string;
+  user: string;
+  byResponsible: number;
+  byTable: number;
+  byClient: number;
+  ByTypeResources: number;
+};
+
+type UserData = {
+  name: string;
+  tickets: number;
+  avatarUrl: string;
+};
+
+type MetricMap = {
+  byResponsible: string;
+  byTable: string;
+  byClient: string;
+  ByTypeResources: string;
+};
+
+const mapValues: MetricMap = {
   byResponsible: "Por responsabilidade",
   byTable: "Por mesa",
   byClient: "Por cliente",
@@ -26,18 +49,21 @@ const mapValues = {
 };
 
 const PieChartComponent = () => {
-  const [chartData, setChartData] = useState([]);
-  const [userData, setUserData] = useState([]);
-  const [activeMetric, setActiveMetric] = useState("byResponsible");
+  const [chartData, setChartData] = useState<ChartData[]>([]);
+  const [userData, setUserData] = useState<UserData[]>([]);
+  const [activeMetric, setActiveMetric] =
+    useState<keyof MetricMap>("byResponsible");
 
   useEffect(() => {
     async function fetchData() {
       const data = jsonData;
 
-      const updatedChartData = data.chartData.map((item, index) => ({
-        ...item,
-        fill: `var(--chart-${index + 1})`,
-      }));
+      const updatedChartData: ChartData[] = data.chartData.map(
+        (item, index) => ({
+          ...item,
+          fill: `var(--chart-${index + 1})`,
+        }),
+      );
 
       setChartData(updatedChartData);
       setUserData(data.userData);
@@ -47,36 +73,39 @@ const PieChartComponent = () => {
   }, []);
 
   const chartConfig = useMemo(() => {
-    return chartData.reduce((config, item, index) => {
-      config[item.user] = {
-        label: item.user,
-        color: `var(--chart-${index + 1})`,
-      };
-      return config satisfies ChartConfig;
-    }, {});
+    return chartData.reduce<Record<string, { label: string; color: string }>>(
+      (config, item) => {
+        config[item.user] = {
+          label: item.user,
+          color: item.fill,
+        };
+        return config satisfies ChartConfig;
+      },
+      {},
+    );
   }, [chartData]);
 
   return (
     <Card className="flex flex-col">
       <CardHeader className="">
         <div className="flex gap-x-7">
-          {["byResponsible", "byTable", "byClient", "ByTypeResources"].map(
-            (value, index) => {
-              return (
-                <Button
-                  variant="link"
-                  key={index}
-                  className={cn("text-textSimples-300", {
-                    "font-semibold text-accent underline underline-offset-8":
-                      value == activeMetric,
-                  })}
-                  onClick={() => setActiveMetric(value)}
-                >
-                  {mapValues[value]}
-                </Button>
-              );
-            },
-          )}
+          {(
+            ["byResponsible", "byTable", "byClient", "ByTypeResources"] as const
+          ).map((value, index) => {
+            return (
+              <Button
+                variant="link"
+                key={index}
+                className={cn("text-textSimples-300", {
+                  "font-semibold text-accent underline underline-offset-8":
+                    value == activeMetric,
+                })}
+                onClick={() => setActiveMetric(value)}
+              >
+                {mapValues[value]}
+              </Button>
+            );
+          })}
         </div>
       </CardHeader>
 
@@ -98,6 +127,13 @@ const PieChartComponent = () => {
                 nameKey="user"
                 innerRadius={85}
                 strokeWidth={5}
+                activeIndex={0}
+                activeShape={({
+                  outerRadius = 0,
+                  ...props
+                }: PieSectorDataItem) => (
+                  <Sector {...props} outerRadius={outerRadius + 10} />
+                )}
               >
                 <Label
                   content={({ viewBox }) => {
@@ -114,8 +150,7 @@ const PieChartComponent = () => {
                             y={viewBox.cy}
                             className="fill-foreground text-3xl font-bold"
                           >
-                            {" "}
-                            10{" "}
+                            10
                           </tspan>
                           <tspan
                             x={viewBox.cx}
@@ -134,7 +169,7 @@ const PieChartComponent = () => {
           </ChartContainer>
         </CardContent>
 
-        <aside className="max-w-60 rounded-lg bg-accentNeutral p-2">
+        <aside className="bg- max-w-60 rounded-lg bg-backgroundMain p-2 shadow-md">
           <CardTitle className="border-b border-border-200 pb-3 text-lg">
             Resumo
           </CardTitle>
