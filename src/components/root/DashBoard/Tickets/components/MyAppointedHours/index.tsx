@@ -10,7 +10,7 @@ import Container from "@/components/ui/organisms/container";
 import dayjs from "dayjs";
 import { CheckCircle } from "lucide-react";
 import React from "react";
-import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import { ValueType } from "recharts/types/component/DefaultTooltipContent";
 
 const formatTime = (milliseconds: ValueType) => {
@@ -36,9 +36,9 @@ const MyAppointedHours = () => {
     { day: days[0], today: 1800000, yesterday: 1800000 },
     { day: days[1], today: 3600000, yesterday: 1800000 },
     { day: days[2], today: 1800000, yesterday: 7200000 },
-    { day: days[3], today: 1800000, yesterday: 2400000 },
+    { day: days[3], today: 7200000, yesterday: 1800000 },
     { day: days[4], today: 1800000, yesterday: 3600000 },
-    { day: days[5], today: 2400000, yesterday: 7200000 },
+    { day: days[5], today: 7200000, yesterday: 7200000 },
   ];
 
   const chartConfig = {
@@ -81,7 +81,7 @@ const MyAppointedHours = () => {
 
           <CardContent>
             <ChartContainer config={chartConfig}>
-              <LineChart
+              <AreaChart
                 accessibilityLayer
                 data={chartData}
                 margin={{
@@ -90,19 +90,19 @@ const MyAppointedHours = () => {
                   right: 18,
                 }}
               >
-                <CartesianGrid vertical={false} strokeDasharray="5 5" />
+                <CartesianGrid stroke="var(--border-100)" vertical={false} />
                 <XAxis
                   dataKey="day"
                   axisLine={false}
                   tickLine={false}
                   tickMargin={7}
-                  padding={{ left: 38 }}
                 />
 
                 <YAxis
                   tickFormatter={formatTime}
                   axisLine={false}
                   tickLine={false}
+                  tickMargin={18}
                 />
 
                 <ChartTooltip
@@ -115,32 +115,40 @@ const MyAppointedHours = () => {
                   }}
                 />
 
-                <Line
+                <Area
                   dataKey="today"
-                  type="monotone"
-                  stroke="var(--chart-1)"
+                  type="natural"
+                  stroke=""
+                  fill="var(--chart-1)"
                   strokeWidth={2}
+                  fillOpacity={0.4}
                   dot={{
                     fill: "var(--chart-1)",
+                    r: 4,
                   }}
                   activeDot={{
                     r: 6,
                   }}
+                  stackId="a"
                 />
 
-                <Line
+                <Area
                   dataKey="yesterday"
                   type="natural"
-                  stroke="var(--chart-2)"
+                  stroke=""
+                  fill="var(--chart-2)"
+                  fillOpacity={0.4}
                   strokeWidth={2}
                   dot={{
-                    fill: "var(--chart-1)",
+                    fill: "var(--chart-2)",
+                    r: 4,
                   }}
                   activeDot={{
                     r: 6,
                   }}
+                  stackId="a"
                 />
-              </LineChart>
+              </AreaChart>
             </ChartContainer>
           </CardContent>
         </Card>
