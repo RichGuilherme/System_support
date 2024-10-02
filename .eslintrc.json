@@ -13,7 +13,7 @@
       "always"
     ],
     "indent": [
-      "error",
+      "off",
       2,
       {
         "MemberExpression": 1,
