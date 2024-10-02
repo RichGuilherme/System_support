@@ -1,5 +1,5 @@
-import DashboardTickets from "./Tickets";
+import DashboardDefault from "./Tickets";
 
 export const Dashboard = () => {
-  return <DashboardTickets />;
+  return <DashboardDefault />;
 };
