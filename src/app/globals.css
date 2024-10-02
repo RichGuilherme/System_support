@@ -33,7 +33,7 @@
     --popover: #FFFFFF;
     --popover-foreground: #1C2338;
 
-    --border-100: #DDE4ED;
+    --border-100: #bcc4ce;
     --border-200:#a2b3c7;
     --input: #DDE4ED;
 
@@ -145,16 +145,16 @@
 
 @layer base {
   * {
-    @apply border-border-100;
+    @apply border-border-100 scrollbar-thin scroll-smooth;
   }
 
   body {
-    @apply bg-backgroundMain text-foregroundMain;
+    @apply bg-backgroundMain text-foregroundMain ;
   }
 }
 
 @layer components {
   .indicator-flex-container {
-    @apply flex w-full flex-row justify-between 
+    @apply inline-flex w-full flex-row justify-between 
   }
 }
