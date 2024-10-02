@@ -90,19 +90,23 @@ const MyAppointedHours = () => {
                   right: 18,
                 }}
               >
-                <CartesianGrid stroke="var(--border-100)" vertical={false} />
+                <CartesianGrid
+                  stroke="var(--border-100)"
+                  vertical={false}
+                  strokeDasharray="4 4"
+                />
                 <XAxis
                   dataKey="day"
                   axisLine={false}
                   tickLine={false}
-                  tickMargin={7}
+                  tickMargin={9}
                 />
 
                 <YAxis
                   tickFormatter={formatTime}
                   axisLine={false}
                   tickLine={false}
-                  tickMargin={18}
+                  tickMargin={9}
                 />
 
                 <ChartTooltip
@@ -122,10 +126,6 @@ const MyAppointedHours = () => {
                   fill="var(--chart-1)"
                   strokeWidth={2}
                   fillOpacity={0.4}
-                  dot={{
-                    fill: "var(--chart-1)",
-                    r: 4,
-                  }}
                   activeDot={{
                     r: 6,
                   }}
@@ -139,10 +139,6 @@ const MyAppointedHours = () => {
                   fill="var(--chart-2)"
                   fillOpacity={0.4}
                   strokeWidth={2}
-                  dot={{
-                    fill: "var(--chart-2)",
-                    r: 4,
-                  }}
                   activeDot={{
                     r: 6,
                   }}

@@ -4,7 +4,7 @@ import { SideBar } from "./SideBar";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex h-screen w-full flex-row">
+    <div className="flex h-screen max-w-full flex-row">
       <SideBar />
 
       <div className="h-full w-full">
