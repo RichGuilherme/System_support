@@ -1,4 +1,4 @@
-import { TableSimple } from "@/components/ui/molecules/tableSimple";
+import { TableSimple } from "@/components/ui/molecules/dataTableSimple";
 import { columns, Payment } from "../columns";
 
 function getData(): Payment[] {
