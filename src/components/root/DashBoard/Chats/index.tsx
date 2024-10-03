@@ -1,3 +1,4 @@
+import ChatGroupStats from "./components/ChatGroupStats";
 import ChatsDepartament from "./components/ChatsDepartament";
 import ChatsStartGroup from "./components/ChatsStartGroup";
 import PerService from "./components/PerService";
@@ -8,6 +9,7 @@ const DashboardChats = () => {
       <ChatsStartGroup />
       <ChatsDepartament />
       <PerService />
+      <ChatGroupStats />
     </div>
   );
 };
