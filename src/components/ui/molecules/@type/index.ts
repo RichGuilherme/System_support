@@ -5,7 +5,9 @@ import { Column, ColumnDef, Row, Table } from "@tanstack/react-table";
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  filtersBar: FilterOption[];
+  filtersBar?: FilterOption[];
+  inputValue: string;
+  showDatePicker?: boolean;
 }
 
 export interface DataTableColumnHeaderProps<TData, TValue>
@@ -41,6 +43,8 @@ export interface FilterOption {
 export interface DataTableToolbarProps<TData> {
   table: Table<TData>;
   filters?: FilterOption[];
+  inputTextValue: string;
+  showDatePicker?: boolean;
 }
 
 export interface DataTableViewOptionsProps<TData> {
