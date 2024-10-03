@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { LucideProps } from "lucide-react";
-import { Badge } from "../atoms/badge";
+import { Badge } from "../../atoms/badge";
 
 type IndicatorBadgeProps = {
   icon: React.ForwardRefExoticComponent<
