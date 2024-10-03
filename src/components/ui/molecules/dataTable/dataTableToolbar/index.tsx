@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/atoms/input";
 import { useState } from "react";
 import { DataTableViewOptions } from "../dataTableViewOptions";
 import { DataTableFacetedFilter } from "../dataTableFacetedFilter";
-import { CalendarDatePicker } from "@/components/ui/atoms/CalendarDatePicker";
+import { CalendarDatePicker } from "@/components/ui/molecules/DatePicket";
 import { DataTableToolbarProps } from "../../@type";
 
 export function DataTableToolbar<TData>({

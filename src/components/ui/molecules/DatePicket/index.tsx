@@ -20,16 +20,16 @@ import { DateRange } from "react-day-picker";
 import { cva, VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
-import { Popover, PopoverContent, PopoverTrigger } from "./popover";
+import { Button } from "../../atoms/button";
+import { Popover, PopoverContent, PopoverTrigger } from "../../atoms/popover";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./select";
-import { Calendar } from "./calendar";
+} from "../../atoms/select";
+import { Calendar } from "../../atoms/calendar";
 
 const months = [
   "Janeiro",
