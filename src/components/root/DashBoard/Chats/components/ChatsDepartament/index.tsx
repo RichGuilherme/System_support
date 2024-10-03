@@ -6,10 +6,16 @@ import { columns } from "./columns";
 import Container from "@/components/ui/organisms/container";
 
 import { data } from "./data/dataChatsDepartaments";
+import { TooltipsIcon } from "@/components/ui/molecules/tooltipIcon";
 
 const ChatsDepartament = () => {
   return (
-    <Container title="Chats por departamentos">
+    <Container
+      title="Chats por departamentos"
+      rightContent={
+        <TooltipsIcon content="Tabela com informações sobre os chats dos departamentos" />
+      }
+    >
       <DataTable
         data={data}
         columns={columns}
