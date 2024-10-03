@@ -23,15 +23,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/atoms/table";
-
-import { DataTablePagination } from "../dataTablePagination";
-import { DataTableToolbar } from "../dataTableToolbar";
-import { DataTableProps } from "../../@type";
+import { DataTableProps } from "../@type";
+import { DataTableToolbar } from "./dataTableToolbar";
+import { DataTablePagination } from "./dataTablePagination";
 
 export function DataTable<TData, TValue>({
   columns,
   data,
   filtersBar,
+  inputValue,
+  showDatePicker,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -64,8 +65,13 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="space-y-4">
-      <DataTableToolbar table={table} filters={filtersBar} />
+    <div className="space-y-4 pb-16">
+      <DataTableToolbar
+        table={table}
+        filters={filtersBar}
+        inputTextValue={inputValue}
+        showDatePicker={showDatePicker}
+      />
 
       <Table>
         <TableHeader>

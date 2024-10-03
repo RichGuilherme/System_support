@@ -14,6 +14,8 @@ import { DataTableToolbarProps } from "../../@type";
 export function DataTableToolbar<TData>({
   table,
   filters = [],
+  inputTextValue,
+  showDatePicker = true,
 }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
 
@@ -33,9 +35,15 @@ export function DataTableToolbar<TData>({
       <div className="flex flex-1 flex-wrap items-center gap-2">
         <Input
           placeholder="Filtrar labels"
-          value={(table.getColumn("note")?.getFilterValue() as string) ?? ""}
+          value={
+            (table
+              .getColumn(`${inputTextValue}`)
+              ?.getFilterValue() as string) ?? ""
+          }
           onChange={(event) => {
-            table.getColumn("note")?.setFilterValue(event.target.value);
+            table
+              .getColumn(`${inputTextValue}`)
+              ?.setFilterValue(event.target.value);
           }}
           className="h-8 w-[150px] lg:w-[250px]"
         />
@@ -63,12 +71,14 @@ export function DataTableToolbar<TData>({
           </Button>
         )}
 
-        <CalendarDatePicker
-          date={dateRange}
-          onDateSelect={handleDateSelect}
-          className="h-8 w-[250px]"
-          variant="outline"
-        />
+        {showDatePicker && (
+          <CalendarDatePicker
+            date={dateRange}
+            onDateSelect={handleDateSelect}
+            className="h-8 w-[250px]"
+            variant="outline"
+          />
+        )}
       </div>
 
       <DataTableViewOptions table={table} />
