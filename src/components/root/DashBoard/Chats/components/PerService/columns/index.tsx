@@ -26,6 +26,7 @@ export const perServiceDataSchema = z.object({
 });
 
 export type Attendant = z.infer<typeof attendantSchema>;
+export type summaryData = z.infer<typeof summaryDataSchema>;
 export type PerServiceData = z.infer<typeof perServiceDataSchema>;
 
 export const columns: ColumnDef<Attendant>[] = [

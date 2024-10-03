@@ -16,7 +16,7 @@ export const TODOSCHATS = {
   MEDIADAATENDIMENTO: "00:18:47",
 };
 
-export const PerService: PerServiceData[] = [
+export const PerServiceValues: PerServiceData[] = [
   {
     summaryData: {
       onlineCount: 9,
