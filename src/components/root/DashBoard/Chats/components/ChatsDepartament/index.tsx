@@ -1,12 +1,21 @@
-import { DataTable } from "@/components/ui/molecules/table/dataTable";
+"use client";
+
+import { DataTable } from "@/components/ui/molecules/dataTable/";
 import { columns } from "./columns";
-import data from "./data/teste.json";
+
 import Container from "@/components/ui/organisms/container";
 
-const ChatsDepartament = async () => {
+import { data } from "./data/dataChatsDepartaments";
+
+const ChatsDepartament = () => {
   return (
-    <Container>
-      <DataTable data={data} columns={columns} />
+    <Container title="Chats por departamentos">
+      <DataTable
+        data={data}
+        columns={columns}
+        inputValue={"departamento"}
+        showDatePicker={false}
+      />
     </Container>
   );
 };

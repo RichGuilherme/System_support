@@ -2,62 +2,60 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { TrendingUp, TrendingDown } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Checkbox } from "@/components/ui/atoms/checkbox";
-import { DataTableColumnHeader } from "@/components/ui/molecules/table/DataTableColumnHeader";
+import { DataTableColumnHeader } from "@/components/ui/molecules/dataTable/DataTableColumnHeader";
 
 import { z } from "zod";
-import { DataTableRowActions } from "@/components/ui/molecules/table/dataTableRowActions";
 
 export const expenseSchema = z.object({
-  id: z.string(),
-  label: z.string(),
-  note: z.string(),
-  category: z.string(),
-  type: z.enum(["income", "expense"]),
-  amount: z.number(),
-  date: z.string(),
+  departamento: z.string(),
+  todos: z.number(),
+  emAtendimento: z.number(),
+  filaDeEspera: z.number(),
+  aguardandoResposta: z.number(),
+  mediaDeEspera: z.string(),
+  mediaDeAtendimento: z.string(),
 });
 
 export type Expense = z.infer<typeof expenseSchema>;
 
 export const columns: ColumnDef<Expense>[] = [
   {
-    accessorKey: "label",
+    accessorKey: "departamento",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Label" />
+      <DataTableColumnHeader column={column} title="Departamento" />
     ),
     cell: ({ row }) => (
-      <div className="w-[150px] capitalize">{row.getValue("label")}</div>
+      <div className="w-[200px] capitalize">{row.getValue("departamento")}</div>
     ),
     enableSorting: false,
     enableHiding: false,
   },
+
   {
-    accessorKey: "note",
+    accessorKey: "todos",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Note" />
+      <DataTableColumnHeader column={column} title="Todos" />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex space-x-2">
           <span className="max-w-[500px] truncate font-medium capitalize">
-            {row.getValue("note")}
+            {row.getValue("todos")}
           </span>
         </div>
       );
     },
   },
+
   {
-    accessorKey: "category",
+    accessorKey: "emAtendimento",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Category" />
+      <DataTableColumnHeader column={column} title="Em atendimento" />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
-          <span className="capitalize"> {row.getValue("category")}</span>
+          <span className="capitalize"> {row.getValue("emAtendimento")}</span>
         </div>
       );
     },
@@ -65,21 +63,16 @@ export const columns: ColumnDef<Expense>[] = [
       return value.includes(row.getValue(id));
     },
   },
+
   {
-    accessorKey: "type",
+    accessorKey: "filaDeEspera",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Type" />
+      <DataTableColumnHeader column={column} title="Fila de espera" />
     ),
     cell: ({ row }) => {
-      const type = row.getValue("type");
       return (
         <div className="flex w-[100px] items-center">
-          {type === "income" ? (
-            <TrendingUp size={20} className="mr-2 text-green-500" />
-          ) : (
-            <TrendingDown size={20} className="mr-2 text-red-500" />
-          )}
-          <span className="capitalize"> {row.getValue("type")}</span>
+          <span className="capitalize"> {row.getValue("filaDeEspera")}</span>
         </div>
       );
     },
@@ -87,46 +80,54 @@ export const columns: ColumnDef<Expense>[] = [
       return value.includes(row.getValue(id));
     },
   },
+
   {
-    accessorKey: "amount",
+    accessorKey: "aguardandoResposta",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Amount" />
+      <DataTableColumnHeader column={column} title="Aguardando resposta" />
     ),
     cell: ({ row }) => {
-      const type = row.getValue("type");
       return (
         <div className="flex w-[100px] items-center">
-          <span
-            className={cn(
-              "capitalize",
-              type === "income" ? "text-green-500" : "text-red-500",
-            )}
-          >
-            {" "}
-            {row.getValue("amount")}
+          <span> {row.getValue("aguardandoResposta")}</span>
+        </div>
+      );
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id));
+    },
+  },
+
+  {
+    accessorKey: "mediaDeEspera",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Média de espera" />
+    ),
+    cell: ({ row }) => {
+      return (
+        <div className="flex w-[100px] items-center">
+          <span className="capitalize">{row.getValue("mediaDeEspera")}</span>
+        </div>
+      );
+    },
+    filterFn: (row, id, value) => {
+      const rowDate = new Date(row.getValue(id));
+      const [startDate, endDate] = value;
+      return rowDate >= startDate && rowDate <= endDate;
+    },
+  },
+
+  {
+    accessorKey: "mediaDeAtendimento",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Média de atendimento" />
+    ),
+    cell: ({ row }) => {
+      return (
+        <div className="flex w-[100px] items-center">
+          <span className="capitalize">
+            {row.getValue("mediaDeAtendimento")}
           </span>
-        </div>
-      );
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id));
-    },
-  },
-  {
-    accessorKey: "date",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Date" />
-    ),
-    cell: ({ row }) => {
-      const date = new Date(row.getValue("date"));
-      const formattedDate = date.toLocaleDateString("en-US", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-      });
-      return (
-        <div className="flex w-[100px] items-center">
-          <span className="capitalize">{formattedDate}</span>
         </div>
       );
     },
