@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import {
-  ColumnDef,
   ColumnFiltersState,
   SortingState,
   VisibilityState,
@@ -27,15 +26,12 @@ import {
 
 import { DataTablePagination } from "../dataTablePagination";
 import { DataTableToolbar } from "../dataTableToolbar";
-
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-}
+import { DataTableProps } from "../../@type";
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  filtersBar,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -69,7 +65,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="space-y-4">
-      <DataTableToolbar table={table} />
+      <DataTableToolbar table={table} filters={filtersBar} />
 
       <Table>
         <TableHeader>

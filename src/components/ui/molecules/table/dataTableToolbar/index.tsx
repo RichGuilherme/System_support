@@ -1,23 +1,19 @@
 "use client";
 
 import { Cross2Icon } from "@radix-ui/react-icons";
-import { Table } from "@tanstack/react-table";
 
 import { Button } from "@/components/ui/atoms/button";
 import { Input } from "@/components/ui/atoms/input";
-import { incomeType, categories } from "../data";
 
 import { useState } from "react";
 import { DataTableViewOptions } from "../dataTableViewOptions";
 import { DataTableFacetedFilter } from "../dataTableFacetedFilter";
 import { CalendarDatePicker } from "@/components/ui/atoms/CalendarDatePicker";
-
-interface DataTableToolbarProps<TData> {
-  table: Table<TData>;
-}
+import { DataTableToolbarProps } from "../../@type";
 
 export function DataTableToolbar<TData>({
   table,
+  filters = [],
 }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
 
@@ -44,20 +40,16 @@ export function DataTableToolbar<TData>({
           className="h-8 w-[150px] lg:w-[250px]"
         />
 
-        {table.getColumn("category") && (
-          <DataTableFacetedFilter
-            column={table.getColumn("category")}
-            title="Categorias"
-            options={categories}
-          />
-        )}
-
-        {table.getColumn("type") && (
-          <DataTableFacetedFilter
-            column={table.getColumn("type")}
-            title="Tipos"
-            options={incomeType}
-          />
+        {filters.map(
+          (filter) =>
+            table.getColumn(filter.columnId) && (
+              <DataTableFacetedFilter
+                key={filter.columnId}
+                column={table.getColumn(filter.columnId)}
+                title={filter.title}
+                options={filter.options}
+              />
+            ),
         )}
 
         {isFiltered && (

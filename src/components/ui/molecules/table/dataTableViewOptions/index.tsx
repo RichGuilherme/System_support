@@ -1,8 +1,6 @@
 "use client";
 
-import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import { MixerHorizontalIcon } from "@radix-ui/react-icons";
-import { Table } from "@tanstack/react-table";
 
 import {
   DropdownMenu,
@@ -10,12 +8,10 @@ import {
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/atoms/dropdown-menu";
 import { Button } from "@/components/ui/atoms/button";
-
-interface DataTableViewOptionsProps<TData> {
-  table: Table<TData>;
-}
+import { DataTableViewOptionsProps } from "../../@type";
 
 export function DataTableViewOptions<TData>({
   table,

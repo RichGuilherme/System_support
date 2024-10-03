@@ -1,6 +1,5 @@
 import * as React from "react";
 import { CheckIcon, PlusCircledIcon } from "@radix-ui/react-icons";
-import { Column } from "@tanstack/react-table";
 
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/atoms/badge";
@@ -20,16 +19,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/atoms/popover";
 import { Separator } from "@/components/ui/atoms/separator";
-
-interface DataTableFacetedFilterProps<TData, TValue> {
-  column?: Column<TData, TValue>;
-  title?: string;
-  options: {
-    label: string;
-    value: string;
-    icon?: React.ComponentType<{ className?: string }>;
-  }[];
-}
+import { DataTableFacetedFilterProps } from "../../@type";
 
 export function DataTableFacetedFilter<TData, TValue>({
   column,
