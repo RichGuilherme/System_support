@@ -1,5 +1,5 @@
 import { MEUSCHATS, TODOSCHATS } from "@/components/data/mockups/chatsMockados";
-import IndicatorBadge from "@/components/ui/atoms/indicatorBadge";
+import IndicatorBadge from "@/components/ui/molecules/indicatorBadge";
 import Container from "@/components/ui/organisms/container";
 import {
   ClockIcon,

@@ -1,4 +1,4 @@
-import IndicatorBadge from "@/components/ui/atoms/indicatorBadge";
+import IndicatorBadge from "@/components/ui/molecules/indicatorBadge";
 import Container from "@/components/ui/organisms/container";
 import { ClipboardIcon, PlayCircleIcon, TicketSlash } from "lucide-react";
 

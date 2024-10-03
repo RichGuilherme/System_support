@@ -5,7 +5,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/atoms/chart";
-import IndicatorBadge from "@/components/ui/atoms/indicatorBadge";
+import IndicatorBadge from "@/components/ui/molecules/indicatorBadge";
 import Container from "@/components/ui/organisms/container";
 import dayjs from "dayjs";
 import { CheckCircle } from "lucide-react";
