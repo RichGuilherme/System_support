@@ -34,7 +34,7 @@ export function DataTableToolbar<TData>({
     <div className="flex flex-wrap items-end justify-between">
       <div className="flex flex-1 flex-wrap items-center gap-2">
         <Input
-          placeholder="Filtrar labels"
+          placeholder={`Filtra ${table.getColumn(inputTextValue)?.columnDef.header}`}
           value={
             (table
               .getColumn(`${inputTextValue}`)
