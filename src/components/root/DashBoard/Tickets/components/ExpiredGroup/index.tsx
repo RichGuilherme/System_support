@@ -18,25 +18,25 @@ const ExpiredGroup = () => {
             icon={Clock12Icon}
             type="Todos"
             valueIndicator={vencimentoAtendimentoData.ALL}
-            color="text-teal-800"
+            color="text-teal"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Hoje"
             valueIndicator={vencimentoAtendimentoData.TODAY}
-            color="text-yellow-500"
+            color="text-yellow"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Amanhã"
             valueIndicator={vencimentoAtendimentoData.TOMORROW}
-            color="text-blue-400"
+            color="text-blue"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Depois"
             valueIndicator={vencimentoAtendimentoData.AFTER}
-            color="text-cyan-500"
+            color="text-cyan"
           />
         </div>
       </Container>
@@ -47,25 +47,25 @@ const ExpiredGroup = () => {
             icon={Clock12Icon}
             type="Todos"
             valueIndicator={vencimentoSoluções.ALL}
-            color="text-teal-800"
+            color="text-teal"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Hoje"
             valueIndicator={vencimentoSoluções.TODAY}
-            color="text-yellow-500"
+            color="text-yellow"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Amanhã"
             valueIndicator={vencimentoSoluções.TOMORROY}
-            color="text-blue-400"
+            color="text-blue"
           />
           <IndicatorBadge
             icon={AlertTriangleIcon}
             type="Depois"
             valueIndicator={vencimentoSoluções.AFTER}
-            color="text-cyan-500"
+            color="text-cyan"
           />
         </div>
       </Container>

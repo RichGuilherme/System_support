@@ -11,7 +11,7 @@ const ScheduledActivities = () => {
       title="Atividades agendadas"
       subTitle={
         <>
-          <CalendarCheckIcon size={17} className="text-green-400" />
+          <CalendarCheckIcon size={17} className="text-green-light" />
           <p>{count} atividades</p>
         </>
       }

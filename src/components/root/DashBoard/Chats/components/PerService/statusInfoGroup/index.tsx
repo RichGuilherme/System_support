@@ -14,19 +14,19 @@ const StatusInfoGroup = ({ data }: StatusInfoGroupProps) => {
           icon={MessageSquareTextIcon}
           type="Todos"
           valueIndicator={data.totalChats}
-          color="text-blue-400"
+          color="text-blue"
         />
         <IndicatorBadge
           icon={UserCircleIcon}
           type="Online"
           valueIndicator={data.onlineCount}
-          color="text-green-500"
+          color="text-green-default"
         />
         <IndicatorBadge
           icon={UserCircleIcon}
           type="Offline"
           valueIndicator={data.offlineCount}
-          color="text-red-500"
+          color="text-red"
         />
       </div>
     </div>

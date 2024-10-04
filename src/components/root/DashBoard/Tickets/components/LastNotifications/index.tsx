@@ -10,7 +10,7 @@ const LastNotifications = () => {
         title="Últimas notificações"
         subTitle={
           <>
-            <BellDot size={17} className="text-green-400" />
+            <BellDot size={17} className="text-green-light" />
             <p>1 notificação</p>
           </>
         }

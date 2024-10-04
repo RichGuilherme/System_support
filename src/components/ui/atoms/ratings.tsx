@@ -10,11 +10,11 @@ const ratingVariants = {
     emptyStar: "text-muted-foreground",
   },
   destructive: {
-    star: "text-red-500",
+    star: "text-red",
     emptyStar: "text-red-200",
   },
   yellow: {
-    star: "text-yellow-500",
+    star: "text-yellow",
     emptyStar: "text-highlight-primary",
   },
 };

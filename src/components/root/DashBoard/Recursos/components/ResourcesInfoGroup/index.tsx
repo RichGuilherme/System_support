@@ -11,21 +11,21 @@ const ResourcesInfoGroup = () => {
             icon={ComputerIcon}
             type="Todos"
             valueIndicator={1456}
-            color={"text-teal-800"}
+            color={"text-teal"}
           />
 
           <IndicatorBadge
             icon={ComputerIcon}
             type="Online"
             valueIndicator={754}
-            color={"text-green-500"}
+            color={"text-green-default"}
           />
 
           <IndicatorBadge
             icon={ComputerIcon}
             type="Offline"
             valueIndicator={411}
-            color={"text-yellow-500"}
+            color={"text-yellow"}
           />
         </div>
       </Container>

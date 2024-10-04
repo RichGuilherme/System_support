@@ -48,7 +48,7 @@ export const columns: ColumnDef<Attendant>[] = [
           {status === "offline" ? (
             <DotIcon size={30} className="text-red-600" />
           ) : (
-            <DotIcon size={30} className="text-green-500" />
+            <DotIcon size={30} className="text-green-default" />
           )}
           <span className="max-w-[500px] truncate font-medium capitalize">
             {row.getValue("status")}

@@ -15,25 +15,25 @@ const CommitmentsGroup = () => {
             icon={CalendarIcon}
             type="Todos"
             valueIndicator={0}
-            color="text-teal-800"
+            color="text-teal"
           />
           <IndicatorBadge
             icon={CalendarMinus2Icon}
             type="Hoje"
             valueIndicator={0}
-            color="text-yellow-500"
+            color="text-yellow"
           />
           <IndicatorBadge
             icon={CalendarRangeIcon}
             type="Semana"
             valueIndicator={0}
-            color="text-blue-400"
+            color="text-blue"
           />
           <IndicatorBadge
             icon={CalendarRangeIcon}
             type="mês"
             valueIndicator={0}
-            color="text-cyan-500"
+            color="text-cyan"
           />
         </div>
       </Container>
@@ -44,25 +44,25 @@ const CommitmentsGroup = () => {
             icon={CalendarIcon}
             type="Todos"
             valueIndicator={0}
-            color="text-teal-800"
+            color="text-teal"
           />
           <IndicatorBadge
             icon={CalendarMinus2Icon}
             type="Hoje"
             valueIndicator={0}
-            color="text-yellow-500"
+            color="text-yellow"
           />
           <IndicatorBadge
             icon={CalendarRangeIcon}
             type="Semana"
             valueIndicator={0}
-            color="text-blue-400"
+            color="text-blue"
           />
           <IndicatorBadge
             icon={CalendarRangeIcon}
             type="mês"
             valueIndicator={0}
-            color="text-cyan-500"
+            color="text-cyan"
           />
         </div>
       </Container>

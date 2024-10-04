@@ -22,25 +22,25 @@ const ChatsStartGroup = () => {
             icon={MessageCircleIcon}
             type="Em atendimento"
             valueIndicator={myChats.EMATENDIMENTO}
-            color="text-green-500"
+            color="text-green-default"
           />
           <IndicatorBadge
             icon={MessageSquareMoreIcon}
             type="Aguardando resposta"
             valueIndicator={myChats.AGUARDANDORESPONSE}
-            color="text-cyan-500"
+            color="text-cyan"
           />
           <IndicatorBadge
             icon={HourglassIcon}
             type="Média de espera"
             valueIndicator={myChats.MEDIADAESPERA}
-            color="text-blue-400"
+            color="text-blue"
           />
           <IndicatorBadge
             icon={ClockIcon}
             type="Média de atendimento"
             valueIndicator={myChats.MEDIADAATENDIMENTO}
-            color="text-teal-800"
+            color="text-teal"
           />
         </div>
       </Container>
@@ -51,37 +51,37 @@ const ChatsStartGroup = () => {
             icon={MessageSquareTextIcon}
             type="Todos"
             valueIndicator={allChats.TODOS}
-            color="text-green-500"
+            color="text-green-default"
           />
           <IndicatorBadge
             icon={MessageCircleIcon}
             type="Em atendimento"
             valueIndicator={allChats.EMATENDIMENTO}
-            color="text-yellow-500"
+            color="text-yellow"
           />
           <IndicatorBadge
             icon={MessageSquareDotIcon}
             type="Fila de espera"
             valueIndicator={allChats.FILADEESPERA}
-            color="text-cyan-500"
+            color="text-cyan"
           />
           <IndicatorBadge
             icon={MessageSquareMoreIcon}
             type="Aguardando resposta"
             valueIndicator={allChats.AGUARDANDORESPONSE}
-            color="text-yellow-500"
+            color="text-yellow"
           />
           <IndicatorBadge
             icon={HourglassIcon}
             type="Média de espera"
             valueIndicator={allChats.MEDIADAESPERA}
-            color="text-blue-400"
+            color="text-blue"
           />
           <IndicatorBadge
             icon={ClockIcon}
             type="Média de atendimento"
             valueIndicator={allChats.MEDIADAATENDIMENTO}
-            color="text-teal-800"
+            color="text-teal"
           />
         </div>
       </Container>

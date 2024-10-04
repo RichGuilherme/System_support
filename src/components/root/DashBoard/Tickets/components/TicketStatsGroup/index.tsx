@@ -24,37 +24,37 @@ const TicketStatsGroup = () => {
             icon={TicketIcon}
             type="Todos"
             valueIndicator={ticketsResumeData.ALL}
-            color="text-green-500"
+            color="text-green-default"
           />
           <IndicatorBadge
             icon={UserIcon}
             type="Meus"
             valueIndicator={ticketsResumeData.MY}
-            color="text-cyan-500"
+            color="text-cyan"
           />
           <IndicatorBadge
             icon={TicketIcon}
             type="Não atendidos"
             valueIndicator={ticketsResumeData.NOTATTENDED}
-            color="text-blue-400"
+            color="text-blue"
           />
           <IndicatorBadge
             icon={CircleEllipsisIcon}
             type="Em andamento"
             valueIndicator={ticketsResumeData.INPROGRESS}
-            color="text-green-500"
+            color="text-green-default"
           />
           <IndicatorBadge
             icon={CircleStopIcon}
             type="Pausados"
             valueIndicator={ticketsResumeData.STOPED}
-            color="text-yellow-500"
+            color="text-yellow"
           />
           <IndicatorBadge
             icon={TriangleAlertIcon}
             type="Vencidos"
             valueIndicator={ticketsResumeData.EXPIRED}
-            color="text-red-500"
+            color="text-red"
           />
         </div>
       </Container>
@@ -65,14 +65,14 @@ const TicketStatsGroup = () => {
             icon={TicketIcon}
             type="Todos"
             valueIndicator={ticketSemRepostaData.ALL}
-            color="text-teal-800"
+            color="text-teal"
           />
 
           <IndicatorBadge
             icon={TicketIcon}
             type="Meus"
             valueIndicator={ticketSemRepostaData.MY}
-            color="text-yellow-500"
+            color="text-yellow"
           />
         </div>
       </Container>

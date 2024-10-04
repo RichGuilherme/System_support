@@ -33,7 +33,7 @@ export const SideBar = () => {
   const userOn = { user: "Richard Guilherme" };
 
   return (
-    <aside className="gradient_azul flex h-screen w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md">
+    <aside className="gradient_azul flex h-screen min-w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md">
       <div className="my-2 space-y-4">
         <p className="flex flex-row items-center gap-2">
           <HeadsetIcon size={30} className="text-highlight-verdinho" />

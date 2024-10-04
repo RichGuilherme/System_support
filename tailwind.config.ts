@@ -10,8 +10,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        backgroundMain: "var(--background)",
-        foregroundMain: "var(--foreground)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        backgroundSecondary: "var(--backgroundSecondary)",
+        foregroundSecondary: "var(--foregroundSecondary)",
+
+        green: {
+          default: "var(--color-green-default)",
+          dark: "var(--color-green-dark)",
+          light: "var(--color-green-light)"
+        },
+        blue: "var(--color-blue)",
+        yellow: "var(--color-yellow)",
+        teal: "var(--color-teal)",
+        red: "var(--color-red)",
+        cyan: "var(--color-cyan)",
 
         border: {
           100: "var(--border-100)",
@@ -38,10 +51,6 @@ const config: Config = {
         input: "var(--input)",
         ring: "var(--ring)",
 
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        backgroundSecondary: "var(--backgroundSecondary)",
-        foregroundSecondary: "var(--foregroundSecondary)",
 
         primary: {
           DEFAULT: "var(--primary)",

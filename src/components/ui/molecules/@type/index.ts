@@ -68,11 +68,12 @@ export interface IndicatorBadgeProps {
   type: string;
   valueIndicator: number | string;
   color:
-  | "text-cyan-500"
-  | "text-green-500"
-  | "text-red-500"
-  | "text-teal-800"
-  | "text-yellow-500"
-  | "text-blue-400"
-  | "text-green-400";
+  | "text-cyan"
+  | "text-green-default"
+  | "text-red"
+  | "text-teal"
+  | "text-yellow"
+  | "text-blue"
+  | "text-green-light"
+  | "text-green-dark";
 };

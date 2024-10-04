@@ -66,14 +66,14 @@ const MyAppointedHours = () => {
                 icon={CheckCircle}
                 type="Ontem"
                 valueIndicator="00:00"
-                color="text-cyan-500"
+                color="text-cyan"
               />
 
               <IndicatorBadge
                 icon={CheckCircle}
                 type="Hoje"
                 valueIndicator="00:00"
-                color="text-yellow-500"
+                color="text-yellow"
               />
             </div>
           </CardHeader>
