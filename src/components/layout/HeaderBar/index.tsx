@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { BreadcrumbComponent } from "./Breadcrumb";
 import { MenuHeader } from "./MenuHeader";
 

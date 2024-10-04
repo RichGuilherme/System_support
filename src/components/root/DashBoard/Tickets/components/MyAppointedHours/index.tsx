@@ -9,7 +9,6 @@ import IndicatorBadge from "@/components/ui/molecules/indicatorBadge";
 import Container from "@/components/ui/organisms/container";
 import dayjs from "dayjs";
 import { CheckCircle } from "lucide-react";
-import React from "react";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import { ValueType } from "recharts/types/component/DefaultTooltipContent";
 
@@ -129,7 +128,6 @@ const MyAppointedHours = () => {
                   activeDot={{
                     r: 6,
                   }}
-                  stackId="a"
                 />
 
                 <Area
@@ -142,7 +140,6 @@ const MyAppointedHours = () => {
                   activeDot={{
                     r: 6,
                   }}
-                  stackId="a"
                 />
               </AreaChart>
             </ChartContainer>

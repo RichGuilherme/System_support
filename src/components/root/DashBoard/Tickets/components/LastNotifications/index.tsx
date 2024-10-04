@@ -1,12 +1,21 @@
 import Container from "@/components/ui/organisms/container";
-import { TicketIcon } from "lucide-react";
-import React from "react";
+import { BellDot, TicketIcon } from "lucide-react";
 
 const LastNotifications = () => {
   return (
     <>
-      <Container height="720px" width="100%" title="Últimas notificações">
-        <div className="flex flex-row items-center justify-between">
+      <Container
+        height="720px"
+        width="100%"
+        title="Últimas notificações"
+        subTitle={
+          <>
+            <BellDot size={17} className="text-green-400" />
+            <p>1 notificação</p>
+          </>
+        }
+      >
+        <div className="flex flex-row items-center justify-between rounded-xl bg-background p-2 px-3">
           <div className="flex items-center gap-3">
             <TicketIcon />
 

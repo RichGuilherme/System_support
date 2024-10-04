@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/atoms/badge";
 import { Ratings } from "@/components/ui/atoms/ratings";
 import Container from "@/components/ui/organisms/container";
 import { DatabaseIcon } from "lucide-react";
-import React from "react";
 
 const ReviewTicketsGroup = () => {
   const reviewsTickets = REVIEWSTICKETS;

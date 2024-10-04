@@ -5,7 +5,6 @@ import {
 import IndicatorBadge from "@/components/ui/molecules/indicatorBadge";
 import Container from "@/components/ui/organisms/container";
 import { AlertTriangleIcon, Clock12Icon } from "lucide-react";
-import React from "react";
 
 const ExpiredGroup = () => {
   const vencimentoAtendimentoData = SERVICEDUEDATE;

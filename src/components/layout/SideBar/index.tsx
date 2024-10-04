@@ -11,7 +11,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/atoms/collapsible";
 import { CollapsibleContent } from "@radix-ui/react-collapsible";
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 export const SideBar = () => {
   const router = useRouter();
