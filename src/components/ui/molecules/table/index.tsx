@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ColumnDef,
   flexRender,
   getCoreRowModel,
   useReactTable,
@@ -15,11 +14,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/atoms/table";
-
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-}
+import { DataTableProps } from "../@type";
 
 export function TableSimple<TData, TValue>({
   columns,

@@ -1,6 +1,7 @@
-// table
+// dataTable
 
 import { Column, ColumnDef, Row, Table } from "@tanstack/react-table";
+import { LucideProps } from "lucide-react";
 
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -50,3 +51,28 @@ export interface DataTableToolbarProps<TData> {
 export interface DataTableViewOptionsProps<TData> {
   table: Table<TData>;
 }
+
+// table
+
+export interface DataTableProps<TData, TValue> {
+  columns: ColumnDef<TData, TValue>[];
+  data: TData[];
+}
+
+// indicatorBadge
+
+export interface IndicatorBadgeProps {
+  icon: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
+  type: string;
+  valueIndicator: number | string;
+  color:
+  | "text-cyan-500"
+  | "text-green-500"
+  | "text-red-500"
+  | "text-teal-800"
+  | "text-yellow-500"
+  | "text-blue-400"
+  | "text-green-400";
+};

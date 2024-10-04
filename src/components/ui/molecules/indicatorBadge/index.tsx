@@ -1,22 +1,6 @@
 import { cn } from "@/lib/utils";
-import { LucideProps } from "lucide-react";
 import { Badge } from "../../atoms/badge";
-
-type IndicatorBadgeProps = {
-  icon: React.ForwardRefExoticComponent<
-    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
-  >;
-  type: string;
-  valueIndicator: number | string;
-  color:
-    | "text-cyan-500"
-    | "text-green-500"
-    | "text-red-500"
-    | "text-teal-800"
-    | "text-yellow-500"
-    | "text-blue-400"
-    | "text-green-400";
-};
+import { IndicatorBadgeProps } from "../@type";
 
 const IndicatorBadge = ({
   icon,
