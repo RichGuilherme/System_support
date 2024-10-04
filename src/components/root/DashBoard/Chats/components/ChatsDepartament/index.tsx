@@ -13,7 +13,7 @@ const ChatsDepartament = () => {
     <Container
       title="Chats por departamentos"
       rightContent={
-        <TooltipsIcon content="Tabela com informações sobre os chats dos departamentos" />
+        <TooltipsIcon content="Tabela com informações sobre os chats de cada departamento" />
       }
     >
       <DataTable

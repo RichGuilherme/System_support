@@ -10,7 +10,7 @@ import {
   MessageSquareTextIcon,
 } from "lucide-react";
 
-const ChatsStartGroup = () => {
+const ChatsInfor = () => {
   const myChats = MEUSCHATS;
   const allChats = TODOSCHATS;
 
@@ -45,7 +45,7 @@ const ChatsStartGroup = () => {
         </div>
       </Container>
 
-      <Container title="Tickets sem resposta" width="49.5%">
+      <Container title="Todos os chats" width="49.5%">
         <div className="indicator-flex-container h-20 gap-x-3 overflow-x-auto pb-10">
           <IndicatorBadge
             icon={MessageSquareTextIcon}
@@ -89,4 +89,4 @@ const ChatsStartGroup = () => {
   );
 };
 
-export default ChatsStartGroup;
+export default ChatsInfor;

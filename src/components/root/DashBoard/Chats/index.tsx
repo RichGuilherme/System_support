@@ -1,12 +1,12 @@
 import ChatGroupStats from "./components/ChatGroupStats";
 import ChatsDepartament from "./components/ChatsDepartament";
-import ChatsStartGroup from "./components/ChatsStartGroup";
+import ChatsInfor from "./components/ChatsInfor";
 import PerService from "./components/PerService";
 
 const DashboardChats = () => {
   return (
     <div className="page-container">
-      <ChatsStartGroup />
+      <ChatsInfor />
       <ChatsDepartament />
       <PerService />
       <ChatGroupStats />
