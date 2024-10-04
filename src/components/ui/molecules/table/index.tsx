@@ -14,12 +14,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/atoms/table";
-import { DataTableProps } from "../@type";
+import { TableProps } from "../@type";
 
 export function TableSimple<TData, TValue>({
   columns,
   data,
-}: DataTableProps<TData, TValue>) {
+}: TableProps<TData, TValue>) {
   const table = useReactTable({
     data,
     columns,

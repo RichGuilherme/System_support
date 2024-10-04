@@ -54,7 +54,7 @@ export interface DataTableViewOptionsProps<TData> {
 
 // table
 
-export interface DataTableProps<TData, TValue> {
+export interface TableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
