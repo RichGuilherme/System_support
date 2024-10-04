@@ -2,8 +2,6 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { DataTableColumnHeader } from "@/components/ui/molecules/dataTable/DataTableColumnHeader";
-
 import { z } from "zod";
 
 export const expenseSchema = z.object({
@@ -21,9 +19,7 @@ export type Expense = z.infer<typeof expenseSchema>;
 export const columns: ColumnDef<Expense>[] = [
   {
     accessorKey: "departamento",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Departamento" />
-    ),
+    header: "Departamento",
     cell: ({ row }) => (
       <div className="w-[200px] capitalize">{row.getValue("departamento")}</div>
     ),
@@ -33,9 +29,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "todos",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Todos" />
-    ),
+    header: "Todos",
     cell: ({ row }) => {
       return (
         <div className="flex space-x-2">
@@ -49,9 +43,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "emAtendimento",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Em atendimento" />
-    ),
+    header: "Em atendimento",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -66,9 +58,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "filaDeEspera",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Fila de espera" />
-    ),
+    header: "Fila de espera",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -83,9 +73,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "aguardandoResposta",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Aguardando resposta" />
-    ),
+    header: "Aguardando resposta",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -100,9 +88,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "mediaDeEspera",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Média de espera" />
-    ),
+    header: "Média de espera",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -119,9 +105,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "mediaDeAtendimento",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Média de atendimento" />
-    ),
+    header: "Média de atendimento",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">

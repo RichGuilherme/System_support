@@ -2,8 +2,6 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { DataTableColumnHeader } from "@/components/ui/molecules/dataTable/DataTableColumnHeader";
-
 import { z } from "zod";
 
 export const groupDataSchema = z.object({
@@ -21,9 +19,7 @@ export type Expense = z.infer<typeof groupDataSchema>;
 export const columns: ColumnDef<Expense>[] = [
   {
     accessorKey: "groupName",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Grupo de atendentes" />
-    ),
+    header: "Grupo de atendentes",
     cell: ({ row }) => (
       <div className="w-[200px] capitalize">{row.getValue("groupName")}</div>
     ),
@@ -33,9 +29,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "total",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Todos" />
-    ),
+    header: "Todos",
     cell: ({ row }) => {
       return (
         <div className="flex space-x-2">
@@ -49,9 +43,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "inProgress",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Em atendimento" />
-    ),
+    header: "Em atendimento",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -66,9 +58,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "inQueue",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Fila de espera" />
-    ),
+    header: "Fila de espera",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -83,9 +73,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "waitingResponse",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Aguardando resposta" />
-    ),
+    header: "Aguardando resposta",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -100,9 +88,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "averageWaitTime",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Média de espera" />
-    ),
+    header: "Média de espera",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -119,9 +105,7 @@ export const columns: ColumnDef<Expense>[] = [
 
   {
     accessorKey: "averageServiceTime",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Média de atendimento" />
-    ),
+    header: "Média de atendimento",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">

@@ -2,8 +2,6 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { DataTableColumnHeader } from "@/components/ui/molecules/dataTable/DataTableColumnHeader";
-
 import { z } from "zod";
 import { DotIcon } from "lucide-react";
 
@@ -32,9 +30,7 @@ export type PerServiceData = z.infer<typeof perServiceDataSchema>;
 export const columns: ColumnDef<Attendant>[] = [
   {
     accessorKey: "name",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Atendente" />
-    ),
+    header: "Atendente",
     cell: ({ row }) => (
       <div className="w-[200px] capitalize">{row.getValue("name")}</div>
     ),
@@ -44,9 +40,7 @@ export const columns: ColumnDef<Attendant>[] = [
 
   {
     accessorKey: "status",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
-    ),
+    header: "Status",
     cell: ({ row }) => {
       const status = row.getValue("status");
       return (
@@ -66,9 +60,7 @@ export const columns: ColumnDef<Attendant>[] = [
 
   {
     accessorKey: "chatsInProgress",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Em andamento" />
-    ),
+    header: "Em andamento",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">
@@ -83,9 +75,7 @@ export const columns: ColumnDef<Attendant>[] = [
 
   {
     accessorKey: "group",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Grupo de atendimento" />
-    ),
+    header: "Grupo de atendimento",
     cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center">

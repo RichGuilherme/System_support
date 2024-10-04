@@ -19,7 +19,7 @@ const ChatGroupStats = () => {
       <DataTable
         data={chatsStatsData}
         columns={columns}
-        inputValue={"departamento"}
+        inputValue={"groupName"}
         showDatePicker={false}
       />
     </Container>

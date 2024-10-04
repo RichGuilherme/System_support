@@ -26,6 +26,7 @@ import {
 import { DataTableProps } from "../@type";
 import { DataTableToolbar } from "./dataTableToolbar";
 import { DataTablePagination } from "./dataTablePagination";
+import { DataTableColumnHeader } from "./DataTableColumnHeader";
 
 export function DataTable<TData, TValue>({
   columns,
@@ -77,18 +78,20 @@ export function DataTable<TData, TValue>({
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id} colSpan={header.colSpan}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
-                  </TableHead>
-                );
-              })}
+              {headerGroup.headers.map((header) => (
+                <TableHead key={header.id} colSpan={header.colSpan}>
+                  {header.isPlaceholder ? null : (
+                    <DataTableColumnHeader
+                      column={header.column}
+                      title={
+                        typeof header.column.columnDef.header === "string"
+                          ? header.column.columnDef.header
+                          : ""
+                      }
+                    />
+                  )}
+                </TableHead>
+              ))}
             </TableRow>
           ))}
         </TableHeader>
