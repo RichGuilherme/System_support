@@ -157,4 +157,8 @@
   .indicator-flex-container {
     @apply inline-flex w-full flex-row justify-between 
   }
+
+  .page-container {
+    @apply flex w-full flex-col gap-y-4
+  }
 }

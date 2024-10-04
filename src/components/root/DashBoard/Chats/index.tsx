@@ -5,7 +5,7 @@ import PerService from "./components/PerService";
 
 const DashboardChats = () => {
   return (
-    <div className="flex w-full flex-col gap-y-4">
+    <div className="page-container">
       <ChatsStartGroup />
       <ChatsDepartament />
       <PerService />
