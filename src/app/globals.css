@@ -82,13 +82,13 @@
     --chart-5: #f4a462de;
 
     --color-green-default: #22C55E;
-    --colors-green-light: #4ADE80;
-    --colors-green-dark:#011401;
-    --colors-yellow: #EAB308;
-    --colors-red: #EF4444;
-    --colors-blue: #60A5FA;
-    --colors-cyan: #06B6D4;
-    --colors-teal:#065058;
+    --color-green-light: #4ADE80;
+    --color-green-dark:#011401;
+    --color-yellow: #EAB308;
+    --color-red: #EF4444;
+    --color-blue: #60A5FA;
+    --color-cyan: #06B6D4;
+    --color-teal:#065058;
   }
 
   .dark {
