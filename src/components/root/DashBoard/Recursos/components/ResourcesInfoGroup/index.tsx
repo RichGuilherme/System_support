@@ -11,7 +11,7 @@ const ResourcesInfoGroup = () => {
             icon={ComputerIcon}
             type="Todos"
             valueIndicator={1456}
-            color={"text-teal"}
+            color={"text-green-dark"}
           />
 
           <IndicatorBadge

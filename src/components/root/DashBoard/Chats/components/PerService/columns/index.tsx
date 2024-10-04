@@ -46,7 +46,7 @@ export const columns: ColumnDef<Attendant>[] = [
       return (
         <div className="flex space-x-2">
           {status === "offline" ? (
-            <DotIcon size={30} className="text-red-600" />
+            <DotIcon size={30} className="text-red" />
           ) : (
             <DotIcon size={30} className="text-green-default" />
           )}
