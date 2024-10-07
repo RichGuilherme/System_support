@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/atoms/button";
 import { Routers } from "@/constant";
 
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDownIcon, HeadsetIcon, LogOutIcon, Plus } from "lucide-react";
+import { ChevronDownIcon, LogOutIcon, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Collapsible,
@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/atoms/collapsible";
 import { CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useRef } from "react";
+import Image from "next/image";
+import logo from "@/app/assets/logo-branca-pequena.png";
 
 export const SideBar = () => {
   const router = useRouter();
@@ -30,23 +32,11 @@ export const SideBar = () => {
     });
   };
 
-  const userOn = { user: "Richard Guilherme" };
-
   return (
     <aside className="gradient_azul flex h-screen min-w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md">
-      <div className="my-2 space-y-4">
-        <p className="flex flex-row items-center gap-2">
-          <HeadsetIcon size={30} className="text-highlight-verdinho" />
-          <b>{userOn.user}</b>
-        </p>
-
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#D9D9D9] to-transparent" />
-        {/* barra divisoria */}
-      </div>
-
       <Button
         variant="outline"
-        className="flex w-10/12 gap-1 rounded-2xl border-highlight-verdinho px-1 py-2 text-sm text-sidebar-foreground"
+        className="mb-4 mt-3 flex w-10/12 gap-1 rounded-2xl border-highlight-verdinho px-1 py-2 text-sm text-sidebar-foreground"
       >
         <Plus className="icon-sm text-sidebar-foreground" />
         Abrir novo ticket
