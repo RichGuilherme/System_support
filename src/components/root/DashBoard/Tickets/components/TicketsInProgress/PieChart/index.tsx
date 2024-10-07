@@ -6,20 +6,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/atoms/card";
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/atoms/chart";
+import { ChartConfig } from "@/components/ui/atoms/chart";
 import { AvatarImage } from "@radix-ui/react-avatar";
 import { useEffect, useMemo, useState } from "react";
-import { Label, Pie, PieChart, Sector } from "recharts";
 import jsonData from "@/components/data/mockups/pieChart.json";
 import { cn } from "@/lib/utils";
-import { PieSectorDataItem } from "recharts/types/polar/Pie";
+import PieComponent from "./pie";
 
-type ChartData = {
+export type ChartData = {
   fill: string;
   user: string;
   byResponsible: number;
@@ -111,65 +105,14 @@ const PieChartComponent = () => {
 
       <div className="mt-2 flex flex-row">
         <CardContent className="w-9/12 p-0">
-          <ChartContainer
-            config={chartConfig}
-            className="mx-auto aspect-square w-full max-w-[390px]"
-          >
-            <PieChart>
-              <ChartTooltip
-                cursor={false}
-                content={<ChartTooltipContent hideLabel />}
-              />
-
-              <Pie
-                data={chartData}
-                dataKey={activeMetric}
-                nameKey="user"
-                innerRadius={85}
-                strokeWidth={5}
-                activeIndex={0}
-                activeShape={({
-                  outerRadius = 0,
-                  ...props
-                }: PieSectorDataItem) => (
-                  <Sector {...props} outerRadius={outerRadius + 10} />
-                )}
-              >
-                <Label
-                  content={({ viewBox }) => {
-                    if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                      return (
-                        <text
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          textAnchor="middle"
-                          dominantBaseline="middle"
-                        >
-                          <tspan
-                            x={viewBox.cx}
-                            y={viewBox.cy}
-                            className="fill-foreground text-3xl font-bold"
-                          >
-                            10
-                          </tspan>
-                          <tspan
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 24}
-                            className="fill-muted-foreground"
-                          >
-                            tickets
-                          </tspan>
-                        </text>
-                      );
-                    }
-                  }}
-                />
-              </Pie>
-            </PieChart>
-          </ChartContainer>
+          <PieComponent
+            activeMetric={activeMetric}
+            chartData={chartData}
+            chartConfig={chartConfig}
+          />
         </CardContent>
 
-        <aside className="bg- max-w-60 rounded-lg bg-backgroundMain p-2 shadow-md">
+        <aside className="bg-backgroundMain max-w-60 rounded-lg p-2 shadow-md">
           <CardTitle className="border-b border-border-200 pb-3 text-lg">
             Resumo
           </CardTitle>
