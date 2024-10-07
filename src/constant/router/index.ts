@@ -42,7 +42,6 @@ export const Routers = [
     title: "Tickets",
     name: "tickets",
     url: "/tickets",
-    child: false,
     icon: TicketsIcon,
   },
   {

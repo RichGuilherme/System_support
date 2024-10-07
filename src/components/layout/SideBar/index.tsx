@@ -12,8 +12,6 @@ import {
 } from "@/components/ui/atoms/collapsible";
 import { CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useRef } from "react";
-import Image from "next/image";
-import logo from "@/app/assets/logo-branca-pequena.png";
 
 export const SideBar = () => {
   const router = useRouter();
@@ -46,31 +44,11 @@ export const SideBar = () => {
         <ul>
           {Routers.map((router) => {
             const IconComponent = router.icon;
-            const isChild = router.child;
+            const isChild = !!router.children;
 
             return (
               <li key={`buttonNav-${router.name}`}>
                 {isChild ? (
-                  <Button
-                    className={cn(
-                      "flex w-full flex-row justify-between rounded-none px-5 py-3 text-sm font-light text-textSimples-200 hover:text-sidebar-foreground",
-                      firstSegment === `${router.name}` &&
-                        "bg-gradient-to-r from-[var(--verdinho-350)] from-10% font-medium text-sidebar-foreground",
-                    )}
-                    onClick={() => handleButtonNav(router.url)}
-                  >
-                    <div className="flex flex-row gap-3">
-                      <IconComponent
-                        size={20}
-                        className={cn(
-                          firstSegment === `${router.name}` &&
-                            "text-highlight-verdinho",
-                        )}
-                      />
-                      {router.title}
-                    </div>
-                  </Button>
-                ) : (
                   <Collapsible
                     ref={(el) => {
                       collapsibleRefs.current[router.name] = el;
@@ -106,26 +84,46 @@ export const SideBar = () => {
                       </div>
                     </CollapsibleTrigger>
 
-                    {router.children && (
+                    {Array.isArray(router.children) === true && (
                       <CollapsibleContent className="flex flex-col items-start bg-[var(--azul-900)]">
-                        {router.children.map((router) => {
-                          const IconComponent = router.icon;
+                        {router.children.map((childRouter) => {
+                          const ChildIconComponent = childRouter.icon;
 
                           return (
                             <Button
-                              key={`collpsibleButton-${router.name}`}
+                              key={`collpsibleButton-${childRouter.name}`}
                               variant="ghost"
                               className="flex w-full justify-start gap-3 rounded-none py-2 pl-8 text-sm font-light text-textSimples-200"
-                              onClick={() => handleButtonNav(router.url)}
+                              onClick={() => handleButtonNav(childRouter.url)}
                             >
-                              <IconComponent size={20} />
-                              {router.title}
+                              <ChildIconComponent size={20} />
+                              {childRouter.title}
                             </Button>
                           );
                         })}
                       </CollapsibleContent>
                     )}
                   </Collapsible>
+                ) : (
+                  <Button
+                    className={cn(
+                      "flex w-full flex-row justify-between rounded-none px-5 py-3 text-sm font-light text-textSimples-200 hover:text-sidebar-foreground",
+                      firstSegment === `${router.name}` &&
+                        "bg-gradient-to-r from-[var(--verdinho-350)] from-10% font-medium text-sidebar-foreground",
+                    )}
+                    onClick={() => handleButtonNav(router.url || "")}
+                  >
+                    <div className="flex flex-row gap-3">
+                      <IconComponent
+                        size={20}
+                        className={cn(
+                          firstSegment === `${router.name}` &&
+                            "text-highlight-verdinho",
+                        )}
+                      />
+                      {router.title}
+                    </div>
+                  </Button>
                 )}
               </li>
             );
