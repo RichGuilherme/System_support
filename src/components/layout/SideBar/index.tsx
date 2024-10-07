@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/atoms/button";
 import { Routers } from "@/constant";
 
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDownIcon, LogOutIcon, Plus } from "lucide-react";
+import { ChevronRightIcon, LogOutIcon, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Collapsible,
@@ -53,11 +53,12 @@ export const SideBar = () => {
                     ref={(el) => {
                       collapsibleRefs.current[router.name] = el;
                     }}
+                    className="group"
                   >
                     <CollapsibleTrigger className="group w-full">
                       <div
                         className={cn(
-                          "group flex w-full flex-row justify-between rounded-none px-5 py-3 text-sm font-light text-textSimples-200 hover:text-sidebar-foreground",
+                          "flex w-full flex-row justify-between rounded-none px-5 py-3 text-sm font-light text-textSimples-200 hover:text-sidebar-foreground",
                           firstSegment === `${router.name}` &&
                             "bg-gradient-to-r from-[var(--verdinho-350)] from-10% font-medium text-sidebar-foreground",
                         )}
@@ -74,10 +75,10 @@ export const SideBar = () => {
                         </div>
 
                         {router.children && (
-                          <ChevronDownIcon
+                          <ChevronRightIcon
                             size={18}
                             className={cn(
-                              "hidden group-hover:block group-data-[state=open]:block",
+                              "hidden group-hover:block group-data-[state=open]:block group-data-[state=open]:rotate-90",
                             )}
                           />
                         )}
