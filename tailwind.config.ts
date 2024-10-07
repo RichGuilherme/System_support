@@ -33,6 +33,7 @@ const config: Config = {
 
         highlight: {
           verdinho: "var(--verdinho-300)",
+          azul: "var(--azul-600)",
           primary: "var(--primary)",
         },
 
