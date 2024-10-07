@@ -112,7 +112,7 @@ const PieChartComponent = () => {
           />
         </CardContent>
 
-        <aside className="bg-backgroundMain max-w-60 rounded-lg p-2 shadow-md">
+        <aside className="max-w-60 rounded-lg bg-background p-2 shadow-md">
           <CardTitle className="border-b border-border-200 pb-3 text-lg">
             Resumo
           </CardTitle>
