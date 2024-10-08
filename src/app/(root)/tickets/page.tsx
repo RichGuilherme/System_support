@@ -1,8 +1,13 @@
 import { Framer } from "@/components/layout/Frame";
+import Tickets from "@/components/root/Tickets";
 import React from "react";
 
 const TicketsPage = () => {
-  return <Framer>TicketsPage</Framer>;
+  return (
+    <Framer>
+      <Tickets />
+    </Framer>
+  );
 };
 
 export default TicketsPage;
