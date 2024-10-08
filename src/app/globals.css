@@ -163,7 +163,7 @@
 
 @layer base {
   * {
-    @apply border-border-100 scrollbar-thin scroll-smooth;
+    @apply border-border-100 scrollbar-thin scroll-smooth ;
   }
 
   body {
@@ -177,6 +177,6 @@
   }
 
   .page-container {
-    @apply flex w-full flex-col gap-y-4
+    @apply flex flex-col gap-y-4
   }
 }

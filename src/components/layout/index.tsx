@@ -7,7 +7,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="flex h-screen max-w-full flex-row">
       <SideBar />
 
-      <div className="h-full w-full">
+      <div className="h-full w-[85.5%]">
         <HeaderBar />
         <main className="h-auto w-full p-6 pb-24">{children}</main>
       </div>
