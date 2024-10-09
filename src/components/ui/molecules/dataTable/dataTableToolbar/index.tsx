@@ -10,24 +10,26 @@ import { DataTableViewOptions } from "../dataTableViewOptions";
 import { DataTableFacetedFilter } from "../dataTableFacetedFilter";
 import { CalendarDatePicker } from "@/components/ui/molecules/DatePicket";
 import { DataTableToolbarProps } from "../../@type";
+import { TrashIcon } from "lucide-react";
 
 export function DataTableToolbar<TData>({
   table,
   filters = [],
+  columnDate,
   inputTextValue,
   showDatePicker = true,
 }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
 
   const [dateRange, setDateRange] = useState<{ from: Date; to: Date }>({
-    from: new Date(new Date().getFullYear(), 0, 1),
+    from: new Date(new Date().getFullYear(), 0, 0),
     to: new Date(),
   });
 
   const handleDateSelect = ({ from, to }: { from: Date; to: Date }) => {
     setDateRange({ from, to });
-    // Filter table data based on selected date range
-    table.getColumn("date")?.setFilterValue([from, to]);
+
+    table.getColumn(`${columnDate}`)?.setFilterValue([from, to]);
   };
 
   return (
@@ -81,7 +83,15 @@ export function DataTableToolbar<TData>({
         )}
       </div>
 
-      <DataTableViewOptions table={table} />
+      <div className="flex items-center gap-2">
+        {table.getFilteredSelectedRowModel().rows.length > 0 ? (
+          <Button variant="outline" size="sm">
+            <TrashIcon className="mr-2 size-4" aria-hidden="true" />
+            Delete ({table.getFilteredSelectedRowModel().rows.length})
+          </Button>
+        ) : null}
+        <DataTableViewOptions table={table} />
+      </div>
     </div>
   );
 }

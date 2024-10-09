@@ -6,6 +6,7 @@ import { LucideProps } from "lucide-react";
 export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  columnDate?: string;
   filtersBar?: FilterOption[];
   inputValue: string;
   showDatePicker?: boolean;
@@ -44,6 +45,7 @@ export interface FilterOption {
 export interface DataTableToolbarProps<TData> {
   table: Table<TData>;
   filters?: FilterOption[];
+  columnDate: string;
   inputTextValue: string;
   showDatePicker?: boolean;
 }

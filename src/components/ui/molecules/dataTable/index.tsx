@@ -32,6 +32,7 @@ export function DataTable<TData, TValue>({
   columns,
   data,
   filtersBar,
+  columnDate,
   inputValue,
   showDatePicker,
 }: DataTableProps<TData, TValue>) {
@@ -70,6 +71,7 @@ export function DataTable<TData, TValue>({
       <DataTableToolbar
         table={table}
         filters={filtersBar}
+        columnDate={columnDate || ""}
         inputTextValue={inputValue}
         showDatePicker={showDatePicker}
       />
