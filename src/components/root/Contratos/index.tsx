@@ -1,18 +1,17 @@
 "use client";
-
 import { Button } from "@/components/ui/atoms/button";
 import Container from "@/components/ui/organisms/container";
-import { Contact2Icon, PlusIcon } from "lucide-react";
+import { GaugeIcon, PlusIcon } from "lucide-react";
 import React from "react";
-import ClientTable from "./components/ClientTable";
+import ContractsTable from "./components/ContractsTable";
 
-const Clientes = () => {
+const Contratos = () => {
   return (
     <Container
-      title="Clientes"
+      title="Contratos"
       subTitle={
         <div className="flex items-center gap-1 text-lg text-green-500">
-          <Contact2Icon size={20} /> 15
+          <GaugeIcon size={23} /> 3
         </div>
       }
       rightContent={
@@ -21,15 +20,15 @@ const Clientes = () => {
           className="flex items-center gap-2 px-4 py-2"
         >
           <PlusIcon size={22} />
-          Clientes
+          Contratos
         </Button>
       }
       style="gap-y-7"
       width="100%"
     >
-      <ClientTable />
+      <ContractsTable />
     </Container>
   );
 };
 
-export default Clientes;
+export default Contratos;
