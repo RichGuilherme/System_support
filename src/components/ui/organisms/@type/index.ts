@@ -12,7 +12,7 @@ export type ContainerProps = {
   gridSpan?: string;
   style?: string;
   title?: string;
-  subTitle?: ReactNode;
+  subTitle?: ReactNode | string;
   rightContent?: ReactNode;
   children: ReactNode;
 };

@@ -2,8 +2,8 @@ import { cn } from "@/lib/utils";
 import { ContainerProps } from "../@type";
 
 const Container = ({
-  width,
-  height,
+  width = "auto",
+  height = "auto",
   gridSpan,
   title,
   subTitle,
