@@ -1,4 +1,6 @@
-export const TicketsData = [
+import { Tickets } from "../columns";
+
+export const TicketsData: Tickets[] = [
   {
     id: 18004,
     cliente: "GBAA (AGO)",
@@ -16,7 +18,7 @@ export const TicketsData = [
   {
     id: 17925,
     cliente: "Leão E Carvalho",
-    titulo: "Retirada de Computador para alter...",
+    titulo: "Retirada de Computador para alterar",
     nome_do_solicitante: "Leonardo Ribeiro",
     responsavel: "Igor Baldi",
     prioridade: "Nenhum",
@@ -53,7 +55,7 @@ export const TicketsData = [
     criado_em: "19/09/2024 13:50",
     vencimento_de_atendimento: "SLA cumprido",
     vencimento_de_solucao: "SLA vencido",
-    status: "Atendimento Remoto",
+    status: "Atendimento Interno",
   },
   {
     id: 17596,
@@ -111,7 +113,6 @@ export const TicketsData = [
     vencimento_de_solucao: "SLA pausado",
     status: "Atendimento Remoto",
   },
-  // Itens adicionais
   {
     id: 18005,
     cliente: "TechCorp",
@@ -218,10 +219,11 @@ export const TicketsData = [
     responsavel: "Carlos Almeida",
     prioridade: "Média",
     estagio: "N2",
-    criado_em: "09/09/2024 10:00",
+    criado_em: "08/10/2024 10:00",
     vencimento_de_atendimento: "00d 02h 30m",
     vencimento_de_solucao: "00d 03h 15m",
     status: "Em Progresso",
+    mesa_de_servico: "Suporte"
   },
   {
     id: 18035,

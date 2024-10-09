@@ -6,33 +6,14 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/atoms/tabs";
-import {
-  ListIcon,
-  ListXIcon,
-  ShieldCheckIcon,
-  TicketCheckIcon,
-  TicketIcon,
-} from "lucide-react";
-import TicketsTable from "./TicketsTable";
-import { Button } from "@/components/ui/atoms/button";
+import { ListIcon } from "lucide-react";
+import TicketsTable from "./components/TicketsTable";
+import NavButtons from "./components/NavButtons";
 
 const Tickets = () => {
   return (
     <Tabs defaultValue="list" className="page-container">
-      <div className="flex w-full flex-row justify-start gap-x-4">
-        <Button variant="outline" className="gap-1 px-3 py-2">
-          <TicketIcon /> Pré-tickets
-        </Button>
-        <Button variant="outline" className="gap-1 px-3 py-2">
-          <ShieldCheckIcon /> Autorizações
-        </Button>
-        <Button variant="outline" className="gap-1 px-3 py-2">
-          <ListXIcon /> Tickets em revisão
-        </Button>
-        <Button variant="outline" className="gap-1 px-3 py-2">
-          <TicketCheckIcon /> Tickets fechados
-        </Button>
-      </div>
+      <NavButtons />
 
       <TabsList>
         <TabsTrigger value="list">
