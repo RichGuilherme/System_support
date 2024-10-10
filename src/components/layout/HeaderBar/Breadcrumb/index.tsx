@@ -34,8 +34,10 @@ export const BreadcrumbComponent = () => {
         {pathSegments.map((segment, index) => {
           const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
 
-          const isLast = index === pathSegments.length - 1;
+          const decodedSegment = decodeURIComponent(segment);
 
+          const isLast = index === pathSegments.length - 1;
+          console.log(decodedSegment);
           return (
             <React.Fragment key={`href-${href}`}>
               {isLast ? (
@@ -47,7 +49,7 @@ export const BreadcrumbComponent = () => {
                     color: "#fff",
                   }}
                 >
-                  <BreadcrumbLink>{segment}</BreadcrumbLink>
+                  <BreadcrumbLink>{decodedSegment}</BreadcrumbLink>
                 </BreadcrumbItem>
               ) : (
                 <>
@@ -58,7 +60,9 @@ export const BreadcrumbComponent = () => {
                       boxShadow: "8px 0px 17px -6px rgba(0, 0, 0, .4)",
                     }}
                   >
-                    <BreadcrumbLink href={href}>{segment}</BreadcrumbLink>
+                    <BreadcrumbLink href={href}>
+                      {decodedSegment}
+                    </BreadcrumbLink>
                   </BreadcrumbItem>
                 </>
               )}
