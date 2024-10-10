@@ -1,15 +1,16 @@
 import { Input } from "@/components/ui/atoms/input";
 import { Button } from "@/components/ui/atoms/button";
-import { Search, MessageSquareText, Bell } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { ModeToggle } from "./ModeToggle";
+import { Search, MessageSquareText } from "lucide-react";
+import MenuProfile from "./MenuProfile";
+import MenuNotifications from "./MenuNotifications";
 
 export const MenuHeader = () => {
   return (
     <div className="flex items-center gap-5">
       <div className="flex items-center space-x-3">
         <Input
-          className="border-border-100 rounded-full border-0 border-b-2 bg-backgroundSecondary py-5 shadow-none"
+          className="rounded-full border-0 border-b-2 border-border-100 bg-backgroundSecondary py-5 shadow-none"
           type="text"
           placeholder="Número do ticket"
         />
@@ -23,19 +24,10 @@ export const MenuHeader = () => {
         <MessageSquareText />
       </Button>
 
-      <Button variant="ghost" size="iconMd">
-        <Bell />
-      </Button>
+      <MenuNotifications />
 
       <ModeToggle />
-      <Avatar>
-        <AvatarImage
-          className="h-10 w-10 rounded-full"
-          src="https://github.com/shadcn.png"
-          alt="avatar"
-        />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
+      <MenuProfile />
     </div>
   );
 };
