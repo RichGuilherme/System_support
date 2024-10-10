@@ -1,4 +1,3 @@
-import { DataTableRowActions } from "@/components/ui/molecules/dataTable/dataTableRowActions";
 import { formatReal } from "@/utils/formatReal";
 import { ColumnDef } from "@tanstack/react-table";
 import { DotIcon } from "lucide-react";
