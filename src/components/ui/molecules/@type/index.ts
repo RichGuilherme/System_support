@@ -10,6 +10,8 @@ export interface DataTableProps<TData, TValue> {
   filtersBar?: FilterOption[];
   inputValue: string;
   showDatePicker?: boolean;
+  showTotalRow?: boolean;
+  totalFieldKey?: keyof TData;
 }
 
 export interface DataTableColumnHeaderProps<TData, TValue>

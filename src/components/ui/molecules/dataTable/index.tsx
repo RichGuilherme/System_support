@@ -27,6 +27,7 @@ import { DataTableProps } from "../@type";
 import { DataTableToolbar } from "./dataTableToolbar";
 import { DataTablePagination } from "./dataTablePagination";
 import { DataTableColumnHeader } from "./DataTableColumnHeader";
+import { formatReal } from "@/utils/formatReal";
 
 export function DataTable<TData, TValue>({
   columns,
@@ -34,7 +35,9 @@ export function DataTable<TData, TValue>({
   filtersBar,
   columnDate,
   inputValue,
-  showDatePicker,
+  showDatePicker = false,
+  showTotalRow = false,
+  totalFieldKey,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -43,6 +46,14 @@ export function DataTable<TData, TValue>({
     [],
   );
   const [sorting, setSorting] = React.useState<SortingState>([]);
+
+  const totalValue = React.useMemo(() => {
+    if (!totalFieldKey) return 0;
+    return data.reduce((total, row) => {
+      const value = row[totalFieldKey] as unknown as number;
+      return total + (value || 0);
+    }, 0);
+  }, [data, totalFieldKey]);
 
   const table = useReactTable({
     data,
@@ -100,18 +111,37 @@ export function DataTable<TData, TValue>({
 
         <TableBody>
           {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+            <>
+              {table.getRowModel().rows.map((row) => (
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+
+              {showTotalRow && (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length - 1}
+                    className="text-start font-bold"
+                  >
+                    Total
                   </TableCell>
-                ))}
-              </TableRow>
-            ))
+                  <TableCell className="font-bold">
+                    {formatReal(totalValue)}
+                  </TableCell>
+                </TableRow>
+              )}
+            </>
           ) : (
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
