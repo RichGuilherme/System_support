@@ -1,3 +1,4 @@
+import { DataTableRowActions } from "@/components/ui/molecules/dataTable/dataTableRowActions";
 import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import { LayoutDashboard } from "lucide-react";
@@ -21,7 +22,7 @@ export const columns: ColumnDef<Resources>[] = [
     accessorKey: "remoteAccess",
     header: "Acesso remoto",
     cell: ({ row }) => (
-      <div className="max-w-[500px]">
+      <div className="w-[50px]">
         <LayoutDashboard
           size={19}
           strokeWidth={3}
@@ -98,5 +99,9 @@ export const columns: ColumnDef<Resources>[] = [
         <span className="capitalize">{row.getValue("lastAccess")}</span>
       </div>
     ),
+  },
+  {
+    id: "actions",
+    cell: ({ row }) => <DataTableRowActions row={row} />,
   },
 ];
