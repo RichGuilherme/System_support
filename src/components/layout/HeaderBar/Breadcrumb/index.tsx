@@ -37,7 +37,6 @@ export const BreadcrumbComponent = () => {
           const decodedSegment = decodeURIComponent(segment);
 
           const isLast = index === pathSegments.length - 1;
-          console.log(decodedSegment);
           return (
             <React.Fragment key={`href-${href}`}>
               {isLast ? (
