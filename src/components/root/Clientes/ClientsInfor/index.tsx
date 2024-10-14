@@ -4,8 +4,8 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/atoms/tabs";
-import ClientInformations from "./ClientInformations";
-import ClientTickets from "./ClientTickets";
+import ClientInformations from "./components/ClientInformations";
+import ClientTickets from "./components/ClientTickets";
 
 const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
   const name = "Richard Guilherme Afonso Silva";
