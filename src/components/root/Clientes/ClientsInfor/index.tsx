@@ -1,3 +1,4 @@
+"use client";
 import {
   Tabs,
   TabsContent,
@@ -7,20 +8,24 @@ import {
 import ClientInformations from "./components/ClientInformations";
 import ClientTickets from "./components/ClientTickets";
 
+import ContainerInformation from "./components/ContainerInformations";
+
 const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
-  const name = "Richard Guilherme Afonso Silva";
-  const idUser = "086442413997";
+  const razaoSocial = {
+    name: "Richard Guilherme Afonso Silva",
+    idUser: "086442413997",
+  };
+
+  const urlLogo = "https://github.com/shadcn.png";
 
   return (
     <Tabs defaultValue="informations" className="page-container">
-      <div className="mb-4">
-        <p className="text-2xl font-medium text-highlight-primary">
-          {paramsValue}
-        </p>
-
-        <div className="text-textSimples-300">{`${name} ${idUser}`}</div>
-      </div>
-
+      <ContainerInformation
+        urlLogo={urlLogo}
+        paramsValue={paramsValue}
+        name={razaoSocial.name}
+        idUser={razaoSocial.idUser}
+      />
       <TabsList>
         <TabsTrigger value="informations">Informações</TabsTrigger>
         <TabsTrigger value="users">Usuário</TabsTrigger>
