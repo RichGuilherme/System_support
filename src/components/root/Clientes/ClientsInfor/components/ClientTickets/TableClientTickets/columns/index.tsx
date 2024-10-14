@@ -1,58 +1,96 @@
-"use client";
-
-import { DataTableRowActions } from "@/components/ui/molecules/dataTable/dataTableRowActions";
-import { PatternFormat } from "react-number-format";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/atoms/tooltip";
 import { ColumnDef } from "@tanstack/react-table";
 import { z } from "zod";
 
-export const ContactsInforSchema = z.object({
+export const ClientTicketsSchema = z.object({
   number: z.number(),
   title: z.string(),
   phase: z.string(),
   status: z.string(),
-  table: z.string(),
+  board: z.string(),
   responsible: z.string(),
-  applicant: z.string(),
-  createdIn: z.string(),
-  closedIn: z.string(),
+  requester: z.string(),
+  createdOn: z.string(),
+  closedOn: z.string(),
 });
 
-export type ContactsInfor = z.infer<typeof ContactsInforSchema>;
+export type ClientTickets = z.infer<typeof ClientTicketsSchema>;
 
-export const columns: ColumnDef<ContactsInfor>[] = [
+export const columns: ColumnDef<ClientTickets>[] = [
   {
     accessorKey: "number",
     header: "Número",
+    cell: ({ row }) => (
+      <div>
+        <span className="text-highlight-azul">{row.getValue("number")}</span>
+      </div>
+    ),
   },
   {
     accessorKey: "title",
     header: "Título",
+    cell: ({ row }) => (
+      <div className="max-w-[130px] truncate">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span>{row.getValue("title")}</span>
+            </TooltipTrigger>
+
+            <TooltipContent>
+              <p>{row.getValue("title")}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
+    ),
   },
   {
     accessorKey: "phase",
     header: "Estagío",
-    cell: ({ row }) => {
-      const phone = row.getValue("phone");
-
-      return (
-        <div>
-          <PatternFormat
-            className="bg-transparent"
-            displayType="text"
-            format="+55 (##) ##### ####"
-            value={phone as string}
-          />
-        </div>
-      );
-    },
   },
   {
-    accessorKey: "typeContact",
-    header: "Tipo de contato",
+    accessorKey: "status",
+    header: "Status",
   },
-
   {
-    id: "actions",
-    cell: ({ row }) => <DataTableRowActions row={row} />,
+    accessorKey: "board",
+    header: "Mesa",
+  },
+  {
+    accessorKey: "responsible",
+    header: "Responsável",
+  },
+  {
+    accessorKey: "requester",
+    header: "Solicitante",
+    cell: ({ row }) => (
+      <div className="max-w-[118px] truncate">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span>{row.getValue("requester")}</span>
+            </TooltipTrigger>
+
+            <TooltipContent>
+              <p>{row.getValue("requester")}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
+    ),
+  },
+  {
+    accessorKey: "createdOn",
+    header: "Criado em",
+  },
+  {
+    accessorKey: "closedOn",
+    header: "Fechado em",
   },
 ];
