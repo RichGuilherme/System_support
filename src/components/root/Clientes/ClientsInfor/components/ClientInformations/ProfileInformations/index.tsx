@@ -26,8 +26,8 @@ const ProfileInformations = () => {
       rightContent={
         <>
           <Button variant="ghost" className="flex gap-2">
+            <Edit2Icon size={20} />
             Editar
-            <Edit2Icon size={23} />
           </Button>
         </>
       }
