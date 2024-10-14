@@ -4,7 +4,8 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/atoms/tabs";
-import Informations from "./informations";
+import ClientInformations from "./ClientInformations";
+import ClientTickets from "./ClientTickets";
 
 const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
   const name = "Richard Guilherme Afonso Silva";
@@ -31,7 +32,11 @@ const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
       </TabsList>
 
       <TabsContent value="informations">
-        <Informations />
+        <ClientInformations />
+      </TabsContent>
+
+      <TabsContent value="tickets">
+        <ClientTickets />
       </TabsContent>
     </Tabs>
   );
