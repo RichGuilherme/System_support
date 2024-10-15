@@ -1,4 +1,4 @@
-import { TableSimple } from "@/components/ui/molecules/table";
+import { TableSimple } from "@/components/ui/molecules/tableSimples";
 
 import { triggersFiredData } from "../data/triggersFiredData";
 import { columns } from "../columns";

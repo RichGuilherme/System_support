@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/atoms/button";
-import { TableSimple } from "@/components/ui/molecules/table";
+import { TableSimple } from "@/components/ui/molecules/tableSimples";
 import Container from "@/components/ui/organisms/container";
 import React from "react";
 import { columns } from "./TableClientTickets/columns";

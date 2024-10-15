@@ -1,4 +1,4 @@
-import { TableSimple } from "@/components/ui/molecules/table";
+import { TableSimple } from "@/components/ui/molecules/tableSimples";
 import { columns } from "./columns";
 import { addressInforData } from "./data/addreessInforData";
 
