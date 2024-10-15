@@ -1,8 +1,8 @@
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Poppins } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import React from "react";
 
-const BeVietnamProp = Poppins({
+const BeVietnamProp = Be_Vietnam_Pro({
   subsets: ["latin"],
   display: "swap",
   weight: [
