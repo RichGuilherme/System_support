@@ -1,4 +1,4 @@
-import { PerServiceData } from "@/components/root/DashBoard/Chats/components/PerService/columns";
+import { PerServiceData } from "@/components/root/DashBoard/Chats/components/PerService/table/columns";
 
 export const MEUSCHATS = {
   EMATENDIMENTO: 2,

@@ -1,8 +1,8 @@
 import { DataTable } from "@/components/ui/molecules/dataTable";
 
-import { ClientsData } from "./data";
-import Filter from "./filters";
-import Columns from "./columns";
+import { ClientsData } from "./table/data";
+import Filter from "./table/filters";
+import Columns from "./table/columns";
 
 const ClientTable = () => {
   const filtersBar = Filter();

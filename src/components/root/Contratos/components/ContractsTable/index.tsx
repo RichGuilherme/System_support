@@ -1,6 +1,6 @@
 import { DataTable } from "@/components/ui/molecules/dataTable";
-import { contractsData } from "./data";
-import { columns } from "./columns";
+import { contractsData } from "./table/data";
+import { columns } from "./table/columns";
 
 const ContractsTable = () => {
   return (

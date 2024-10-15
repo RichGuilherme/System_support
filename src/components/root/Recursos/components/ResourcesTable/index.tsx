@@ -1,7 +1,7 @@
 import { DataTable } from "@/components/ui/molecules/dataTable";
 import React from "react";
-import { columns } from "./columns";
-import { ResourcesData } from "./data/resourcesData";
+import { columns } from "./table/columns";
+import { ResourcesData } from "./table/data/resourcesData";
 
 const ResourcesTable = () => {
   return (

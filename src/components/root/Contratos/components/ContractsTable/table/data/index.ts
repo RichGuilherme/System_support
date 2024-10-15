@@ -1,5 +1,6 @@
 import { Contracts } from "../columns";
 
+
 export const contractsData: Contracts[] = [
   {
     name: "Contrato de Prestação de Serviços Nº 5234 - Plano Pro",

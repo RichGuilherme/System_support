@@ -21,7 +21,7 @@ export const columns: ColumnDef<Contracts>[] = [
     header: "Nome",
     cell: ({ row }) => (
       <div className="max-w-[500px]">
-        <span className="capitalize">{row.getValue("name")}</span>
+        E<span className="capitalize">{row.getValue("name")}</span>
       </div>
     ),
   },

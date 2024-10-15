@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/atoms/button";
 import { TableSimple } from "@/components/ui/molecules/tableSimples";
 import Container from "@/components/ui/organisms/container";
 import React from "react";
-import { columns } from "./TableClientTickets/columns";
-import { clientTicketsData } from "./TableClientTickets/data/clientTicketsData";
+import { columns } from "./table/columns";
+import { clientTicketsData } from "./table/data/clientTicketsData";
 
-const TableClientTickets = () => {
+const ClientTickets = () => {
   return (
     <Container
       title="Tickets"
@@ -23,4 +23,4 @@ const TableClientTickets = () => {
   );
 };
 
-export default TableClientTickets;
+export default ClientTickets;

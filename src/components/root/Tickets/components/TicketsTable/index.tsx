@@ -2,9 +2,9 @@ import { DataTable } from "@/components/ui/molecules/dataTable/";
 
 import Container from "@/components/ui/organisms/container";
 
-import { columns } from "./columns";
-import { TicketsData } from "./data";
-import Filter from "./filters";
+import { columns } from "./table/columns";
+import { TicketsData } from "./table/data";
+import Filter from "./table/filters";
 
 const TicketsTable = () => {
   const filtersBar = Filter();

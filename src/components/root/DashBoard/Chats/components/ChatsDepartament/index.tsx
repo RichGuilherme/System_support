@@ -1,11 +1,11 @@
 "use client";
 
 import { DataTable } from "@/components/ui/molecules/dataTable/";
-import { columns } from "./columns";
+import { columns } from "./table/columns";
 
 import Container from "@/components/ui/organisms/container";
 
-import { data } from "./data/dataChatsDepartaments";
+import { data } from "./table/data/dataChatsDepartaments";
 import { TooltipsIcon } from "@/components/ui/molecules/tooltipIcon";
 
 const ChatsDepartament = () => {

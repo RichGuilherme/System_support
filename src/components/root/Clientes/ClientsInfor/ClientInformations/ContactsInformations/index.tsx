@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/atoms/button";
 import Container from "@/components/ui/organisms/container";
 import { PlusIcon } from "lucide-react";
 import React from "react";
-import TableContats from "./TableContacts";
+import TableContats from "./table";
 
 const ContactsInformations = () => {
   return (

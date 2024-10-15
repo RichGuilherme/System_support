@@ -1,11 +1,11 @@
 "use client";
 
 import { DataTable } from "@/components/ui/molecules/dataTable/";
-import { columns } from "./columns";
+import { columns } from "./table/columns";
 
 import Container from "@/components/ui/organisms/container";
 
-import { AttendantData } from "./data/dataAttendant";
+import { AttendantData } from "./table/data/dataAttendant";
 import { TooltipsIcon } from "@/components/ui/molecules/tooltipIcon";
 import StatusInfoGroup from "./statusInfoGroup";
 import { PerServiceValues } from "@/components/data/mockups/chatsMockados";

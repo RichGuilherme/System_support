@@ -1,6 +1,6 @@
 import IndicatorBadge from "@/components/ui/molecules/indicatorBadge";
 import { MessageSquareTextIcon, UserCircleIcon } from "lucide-react";
-import { summaryData } from "../columns";
+import { summaryData } from "../table/columns";
 
 interface StatusInfoGroupProps {
   data: summaryData;

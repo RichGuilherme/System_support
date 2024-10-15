@@ -3,6 +3,7 @@ import { TableSimple } from "@/components/ui/molecules/tableSimples";
 import Container from "@/components/ui/organisms/container";
 import { PlusIcon } from "lucide-react";
 import React from "react";
+import { columns } from "./table/column";
 
 const ClientPortal = () => {
   return (
@@ -18,7 +19,7 @@ const ClientPortal = () => {
         </>
       }
     >
-      <TableSimple columns={[]} data={[]} />
+      <TableSimple columns={columns} data={[]} />
     </Container>
   );
 };

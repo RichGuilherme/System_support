@@ -1,26 +1,26 @@
-"use client";
-
 import { Button } from "@/components/ui/atoms/button";
+import { TableSimple } from "@/components/ui/molecules/tableSimples";
 import Container from "@/components/ui/organisms/container";
 import { PlusIcon } from "lucide-react";
-import TableAddress from "./table";
+import { columns } from "./table/column";
 
-const AddressInformations = () => {
+const ClientRequester = () => {
   return (
     <Container
+      title="Solicitante"
       width="100%"
-      title="Endereços"
       rightContent={
         <>
           <Button variant="secondary" className="button-action">
-            <PlusIcon size={18} /> Endereço
+            <PlusIcon size={18} />
+            Solicitante
           </Button>
         </>
       }
     >
-      <TableAddress />
+      <TableSimple columns={columns} data={[]} />
     </Container>
   );
 };
 
-export default AddressInformations;
+export default ClientRequester;
