@@ -10,6 +10,7 @@ import ClientTickets from "./ClientTickets";
 
 import ContainerInformation from "./ContainerInformations";
 import ClientUser from "./ClientUser";
+import ClientContracts from "./ClientContracts";
 
 const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
   const razaoSocial = {
@@ -18,6 +19,20 @@ const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
   };
 
   const urlLogo = "https://github.com/shadcn.png";
+
+  const tabs = [
+    {
+      value: "informations",
+      label: "Informações",
+      component: <ClientInformations />,
+    },
+    { value: "users", label: "Usuário", component: <ClientUser /> },
+    { value: "tickets", label: "Tickets", component: <ClientTickets /> },
+    { value: "contracts", label: "Contratos", component: <ClientContracts /> },
+    { value: "resources", label: "Recursos", component: "" },
+    { value: "relationship", label: "Relacionamentos", component: "" },
+    { value: "billing", label: "Faturamento", component: "" },
+  ];
 
   return (
     <Tabs defaultValue="informations" className="page-container">
@@ -28,26 +43,18 @@ const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
         idUser={razaoSocial.idUser}
       />
       <TabsList>
-        <TabsTrigger value="informations">Informações</TabsTrigger>
-        <TabsTrigger value="users">Usuário</TabsTrigger>
-        <TabsTrigger value="tickets">Tickets</TabsTrigger>
-        <TabsTrigger value="contracts">Contratos</TabsTrigger>
-        <TabsTrigger value="resources">Recursos</TabsTrigger>
-        <TabsTrigger value="relationship">Relacionamentos</TabsTrigger>
-        <TabsTrigger value="billing">Faturamento</TabsTrigger>
+        {tabs.map((tab) => (
+          <TabsTrigger key={tab.value} value={tab.value}>
+            {tab.label}
+          </TabsTrigger>
+        ))}
       </TabsList>
 
-      <TabsContent value="informations">
-        <ClientInformations />
-      </TabsContent>
-
-      <TabsContent value="users">
-        <ClientUser />
-      </TabsContent>
-
-      <TabsContent value="tickets">
-        <ClientTickets />
-      </TabsContent>
+      {tabs.map((tab) => (
+        <TabsContent key={tab.value} value={tab.value}>
+          {tab.component}
+        </TabsContent>
+      ))}
     </Tabs>
   );
 };
