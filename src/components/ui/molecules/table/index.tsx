@@ -15,6 +15,7 @@ import {
   TableRow,
 } from "@/components/ui/atoms/table";
 import { TableProps } from "../@type";
+import IconNotfound from "@/app/assets/IconNotFound";
 
 export function TableSimple<TData, TValue>({
   columns,
@@ -62,8 +63,13 @@ export function TableSimple<TData, TValue>({
           ))
         ) : (
           <TableRow>
-            <TableCell colSpan={columns.length} className="h-24 text-center">
-              No results.
+            <TableCell colSpan={columns.length} className="h-auto">
+              <div className="flex w-full flex-col items-center justify-center text-2xl font-semibold text-textSimples-300">
+                <div className="h-[310px] w-[460px] opacity-70">
+                  <IconNotfound />
+                </div>
+                Sem resultado
+              </div>
             </TableCell>
           </TableRow>
         )}
