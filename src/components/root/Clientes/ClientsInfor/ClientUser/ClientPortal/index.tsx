@@ -1,28 +1,26 @@
 import { Button } from "@/components/ui/atoms/button";
+import { TableSimple } from "@/components/ui/molecules/tableSimples";
 import Container from "@/components/ui/organisms/container";
 import { PlusIcon } from "lucide-react";
 import React from "react";
-import TableContats from "./TableContacts";
 
-const ContactsInformations = () => {
+const ClientPortal = () => {
   return (
     <Container
+      title="Portal do cliente"
       width="100%"
-      title="Contatos"
       rightContent={
         <>
-          <Button
-            variant="secondary"
-            className="flex items-center gap-2 px-4 py-2"
-          >
-            <PlusIcon size={22} /> Contatos
+          <Button variant="secondary" className="button-action">
+            <PlusIcon size={18} />
+            Usuário cliente
           </Button>
         </>
       }
     >
-      <TableContats />
+      <TableSimple columns={[]} data={[]} />
     </Container>
   );
 };
 
-export default ContactsInformations;
+export default ClientPortal;

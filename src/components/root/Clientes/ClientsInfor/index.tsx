@@ -5,10 +5,11 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/atoms/tabs";
-import ClientInformations from "./components/ClientInformations";
-import ClientTickets from "./components/ClientTickets";
+import ClientInformations from "./ClientInformations";
+import ClientTickets from "./ClientTickets";
 
-import ContainerInformation from "./components/ContainerInformations";
+import ContainerInformation from "./ContainerInformations";
+import ClientUser from "./ClientUser";
 
 const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
   const razaoSocial = {
@@ -38,6 +39,10 @@ const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
 
       <TabsContent value="informations">
         <ClientInformations />
+      </TabsContent>
+
+      <TabsContent value="users">
+        <ClientUser />
       </TabsContent>
 
       <TabsContent value="tickets">

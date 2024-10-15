@@ -12,11 +12,8 @@ const AddressInformations = () => {
       title="Endereços"
       rightContent={
         <>
-          <Button
-            variant="secondary"
-            className="flex items-center gap-2 px-4 py-2"
-          >
-            <PlusIcon size={22} /> Endereço
+          <Button variant="secondary" className="button-action">
+            <PlusIcon size={18} /> Endereço
           </Button>
         </>
       }
