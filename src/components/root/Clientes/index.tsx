@@ -11,16 +11,13 @@ const Clientes = () => {
     <Container
       title="Clientes"
       subTitle={
-        <div className="flex items-center gap-1 text-lg text-green-500">
-          <Contact2Icon size={20} /> 15
+        <div className="button-action text-green-500">
+          <Contact2Icon size={18} /> 15
         </div>
       }
       rightContent={
-        <Button
-          variant="secondary"
-          className="flex items-center gap-2 px-4 py-2"
-        >
-          <PlusIcon size={22} />
+        <Button variant="secondary" className="button-action">
+          <PlusIcon size={18} />
           Clientes
         </Button>
       }
