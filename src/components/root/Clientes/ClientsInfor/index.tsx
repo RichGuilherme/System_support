@@ -12,6 +12,7 @@ import ContainerInformation from "./ContainerInformations";
 import ClientUser from "./ClientUser";
 import ClientContracts from "./ClientContracts";
 import ClientResource from "./ClientResources";
+import ClientRelationship from "./ClientRelationship";
 
 const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
   const razaoSocial = {
@@ -27,12 +28,36 @@ const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
       label: "Informações",
       component: <ClientInformations />,
     },
-    { value: "users", label: "Usuário", component: <ClientUser /> },
-    { value: "tickets", label: "Tickets", component: <ClientTickets /> },
-    { value: "contracts", label: "Contratos", component: <ClientContracts /> },
-    { value: "resources", label: "Recursos", component: <ClientResource /> },
-    { value: "relationship", label: "Relacionamentos", component: "" },
-    { value: "billing", label: "Faturamento", component: "" },
+    {
+      value: "users",
+      label: "Usuário",
+      component: <ClientUser />,
+    },
+    {
+      value: "tickets",
+      label: "Tickets",
+      component: <ClientTickets />,
+    },
+    {
+      value: "contracts",
+      label: "Contratos",
+      component: <ClientContracts />,
+    },
+    {
+      value: "resources",
+      label: "Recursos",
+      component: <ClientResource />,
+    },
+    {
+      value: "relationship",
+      label: "Relacionamentos",
+      component: <ClientRelationship />,
+    },
+    {
+      value: "billing",
+      label: "Faturamento",
+      component: "",
+    },
   ];
 
   return (
