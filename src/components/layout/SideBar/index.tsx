@@ -78,7 +78,7 @@ export const SideBar = () => {
                           <ChevronRightIcon
                             size={18}
                             className={cn(
-                              "hidden group-hover:block group-data-[state=open]:block group-data-[state=open]:rotate-90",
+                              "group-data-[state=open]:block group-data-[state=open]:rotate-90",
                             )}
                           />
                         )}
