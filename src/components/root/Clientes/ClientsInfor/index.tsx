@@ -8,11 +8,12 @@ import {
 import ClientInformations from "./ClientInformations";
 import ClientTickets from "./ClientTickets";
 
-import ContainerInformation from "./ContainerInformations";
+import ContainerInformation from "./components/ContainerInformations";
 import ClientUser from "./ClientUser";
 import ClientContracts from "./ClientContracts";
 import ClientResource from "./ClientResources";
 import ClientRelationship from "./ClientRelationship";
+import ClientFinancial from "./ClientFinancial";
 
 const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
   const razaoSocial = {
@@ -54,9 +55,9 @@ const ClientsInfor = ({ paramsValue }: { paramsValue: string }) => {
       component: <ClientRelationship />,
     },
     {
-      value: "billing",
+      value: "financial",
       label: "Faturamento",
-      component: "",
+      component: <ClientFinancial />,
     },
   ];
 
