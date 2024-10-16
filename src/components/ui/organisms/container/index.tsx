@@ -24,7 +24,9 @@ const Container = ({
     >
       <div className="flex items-start justify-between">
         <div className="flex flex-col justify-start gap-y-1">
-          <p className="text-base font-semibold">{title}</p>
+          <p className="flex flex-row items-center gap-2 text-base font-semibold">
+            {title}
+          </p>
 
           <div className="flex flex-row items-center gap-1 text-sm font-medium text-textSimples-300">
             {subTitle}
