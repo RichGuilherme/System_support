@@ -47,26 +47,7 @@ export const Routers = [
   {
     title: "Chats",
     name: "chats",
-    children: [
-      {
-        title: "Tickets",
-        name: "dashboard/tickets",
-        url: "/dashboard/tickets",
-        icon: TicketsIcon,
-      },
-      {
-        title: "Chats",
-        name: "dashbord/chats",
-        url: "/dashboard/chats",
-        icon: MessageSquareTextIcon,
-      },
-      {
-        title: "Recursos",
-        name: "dashbord/recursos",
-        url: "/dashboard/recursos",
-        icon: MonitorCogIcon,
-      },
-    ],
+    url: "/chats",
     icon: MessageSquareTextIcon,
   },
   {
@@ -89,8 +70,8 @@ export const Routers = [
   },
   {
     title: "Relatórios",
-    name: "relatórios",
-    url: "/relatórios",
+    name: "relatorios",
+    url: "/relatorios",
     icon: ChartNoAxesCombinedIcon,
   },
   {
