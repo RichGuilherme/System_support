@@ -10,6 +10,8 @@ import {
   BookMarkedIcon,
   LockKeyholeIcon,
   SettingsIcon,
+  UserCog2,
+  Trash2Icon,
 } from "lucide-react";
 
 export const Routers = [
@@ -70,9 +72,40 @@ export const Routers = [
   },
   {
     title: "Relatórios",
-    name: "relatorios",
-    url: "/relatorios",
+    name: "relatorio",
     icon: ChartNoAxesCombinedIcon,
+    children: [
+      {
+        title: "Atentende",
+        name: "relatorio/atendente",
+        url: "/relatorio/atendente",
+        icon: TicketsIcon,
+      },
+      {
+        title: "Faturamento",
+        name: "relatorio/faturamento",
+        url: "/relatorio/faturamento",
+        icon: MessageSquareTextIcon,
+      },
+      {
+        title: "Administrativo",
+        name: "relatorio/administrativo",
+        url: "/relatorio/administrativo",
+        icon: UserCog2,
+      },
+      {
+        title: "Recursos",
+        name: "relatorio/recursos",
+        url: "/relatorio/recursos",
+        icon: MonitorCogIcon,
+      },
+      {
+        title: "Excluídos e bloqueados",
+        name: "relatorio/excluidos_bloqueados",
+        url: "/relatorio/excluidos_bloqueados",
+        icon: Trash2Icon
+      }
+    ],
   },
   {
     title: "Agenda",

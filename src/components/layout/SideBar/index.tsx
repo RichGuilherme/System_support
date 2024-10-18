@@ -38,7 +38,7 @@ export const SideBar = () => {
   return (
     <aside
       className={cn(
-        "gradient_azul flex h-screen w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md transition-all",
+        "gradient_azul transition-width flex h-screen w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md transition-all duration-300 ease-in-out",
         !expansed && "w-auto",
       )}
     >
@@ -104,7 +104,7 @@ export const SideBar = () => {
                             <Button
                               key={`collpsibleButton-${childRouter.name}`}
                               variant="ghost"
-                              className="flex w-full justify-start gap-3 rounded-none py-2 pl-8 text-sm font-light text-textSimples-200"
+                              className="flex w-full justify-start gap-3 rounded-none py-2 pl-5 text-sm font-light text-textSimples-200"
                               onClick={() => handleButtonNav(childRouter.url)}
                             >
                               <ChildIconComponent size={20} />
