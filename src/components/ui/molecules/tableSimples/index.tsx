@@ -65,7 +65,7 @@ export function TableSimple<TData, TValue>({
           <TableRow>
             <TableCell colSpan={columns.length} className="h-auto">
               <div className="flex w-full flex-col items-center justify-center text-2xl font-semibold text-textSimples-300">
-                <div className="h-[310px] w-[460px] opacity-70">
+                <div className="h-[180px] w-[260px] opacity-70">
                   <IconNotfound />
                 </div>
                 Sem resultado

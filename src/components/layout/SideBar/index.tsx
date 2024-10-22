@@ -38,8 +38,8 @@ export const SideBar = () => {
   return (
     <aside
       className={cn(
-        "gradient_azul transition-width flex h-screen w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md transition-all duration-300 ease-in-out",
-        !expansed && "w-auto",
+        "gradient_azul sticky top-0 z-10 flex h-screen min-w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md duration-500 ease-in-out",
+        !expansed && "min-w-0",
       )}
     >
       <Button
@@ -96,18 +96,15 @@ export const SideBar = () => {
                     </CollapsibleTrigger>
 
                     {Array.isArray(router.children) === true && (
-                      <CollapsibleContent className="flex flex-col items-start bg-[var(--azul-900)]">
+                      <CollapsibleContent className="flex flex-col items-start gap-2 bg-[var(--azul-900)]">
                         {router.children.map((childRouter) => {
-                          const ChildIconComponent = childRouter.icon;
-
                           return (
                             <Button
                               key={`collpsibleButton-${childRouter.name}`}
                               variant="ghost"
-                              className="flex w-full justify-start gap-3 rounded-none py-2 pl-5 text-sm font-light text-textSimples-200"
+                              className="flex w-full justify-start gap-3 rounded-none py-2 pl-[52px] text-sm font-light text-textSimples-200"
                               onClick={() => handleButtonNav(childRouter.url)}
                             >
-                              <ChildIconComponent size={20} />
                               {expansed && childRouter.title}
                             </Button>
                           );
