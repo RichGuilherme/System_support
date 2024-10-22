@@ -45,7 +45,7 @@ const Columns = () => {
       cell: ({ row }) => (
         <div
           className="max-w-[500px] cursor-pointer"
-          onClick={() => router.push(`recursos/${row.getValue("name")}`)}
+          onClick={() => router.push(`recursos/${row.getValue("client")}`)}
         >
           <span className="capitalize">{row.getValue("client")}</span>
         </div>
@@ -57,7 +57,7 @@ const Columns = () => {
       cell: ({ row }) => (
         <div
           className="max-w-[500px] cursor-pointer"
-          onClick={() => router.push(`recursos/${row.getValue("name")}`)}
+          onClick={() => router.push(`recursos/${row.getValue("client")}`)}
         >
           <span className="capitalize">
             {row.getValue("clientResourceGroup")}
