@@ -10,7 +10,7 @@ const TicketsTable = () => {
   const filtersBar = Filter();
 
   return (
-    <Container height="100%" width="100%" style="pt-0 flex-1">
+    <Container height="735px" style="pt-0 absolute w-full">
       <DataTable
         columns={columns}
         data={TicketsData}

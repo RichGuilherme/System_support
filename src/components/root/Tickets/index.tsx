@@ -12,7 +12,7 @@ import NavButtons from "./components/NavButtons";
 
 const Tickets = () => {
   return (
-    <Tabs defaultValue="list" className="page-container">
+    <Tabs defaultValue="list" className="page-container relative h-screen">
       <NavButtons />
 
       <TabsList>

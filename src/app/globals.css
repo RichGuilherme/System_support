@@ -168,11 +168,11 @@
 
 @layer base {
   * {
-    @apply border-border-100 scrollbar-thin scroll-smooth ;
+    @apply border-border-100 scrollbar-thin scroll-smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-hidden;
   }
 }
 
