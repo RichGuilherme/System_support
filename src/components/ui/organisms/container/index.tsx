@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { ContainerProps } from "../@type";
 
 const Container = ({
-  width = "auto",
+  width,
   height = "auto",
   gridSpan,
   title,
@@ -23,15 +23,18 @@ const Container = ({
       {...props}
     >
       <div className="flex items-start justify-between">
-        <div className="flex flex-col justify-start gap-y-1">
-          <p className="flex flex-row items-center gap-2 text-base font-semibold">
-            {title}
-          </p>
+        {title ||
+          (subTitle && (
+            <div className="flex flex-col justify-start gap-y-1">
+              <p className="flex flex-row items-center gap-2 text-base font-semibold">
+                {title}
+              </p>
 
-          <div className="flex flex-row items-center gap-1 text-sm font-medium text-textSimples-300">
-            {subTitle}
-          </div>
-        </div>
+              <div className="flex flex-row items-center gap-1 text-sm font-medium text-textSimples-300">
+                {subTitle}
+              </div>
+            </div>
+          ))}
 
         {rightContent}
       </div>
