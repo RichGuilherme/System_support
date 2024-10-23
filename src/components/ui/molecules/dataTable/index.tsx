@@ -28,6 +28,7 @@ import { DataTableToolbar } from "./dataTableToolbar";
 import { DataTablePagination } from "./dataTablePagination";
 import { DataTableColumnHeader } from "./DataTableColumnHeader";
 import { formatReal } from "@/utils/formatReal";
+import IconNotFound from "@/assets/IconNotFound";
 
 export function DataTable<TData, TValue>({
   columns,
@@ -144,8 +145,13 @@ export function DataTable<TData, TValue>({
             </>
           ) : (
             <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+              <TableCell colSpan={columns.length} className="h-auto">
+                <div className="flex w-full flex-col items-center justify-center text-2xl font-semibold text-textSimples-300">
+                  <div className="h-[180px] w-[260px] opacity-70">
+                    <IconNotFound />
+                  </div>
+                  Sem resultado
+                </div>
               </TableCell>
             </TableRow>
           )}

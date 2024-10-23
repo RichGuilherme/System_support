@@ -15,7 +15,7 @@ import {
   TableRow,
 } from "@/components/ui/atoms/table";
 import { TableProps } from "../@type";
-import IconNotfound from "@/app/assets/IconNotFound";
+import IconNotfound from "@/assets/IconNotFound";
 
 export function TableSimple<TData, TValue>({
   columns,
