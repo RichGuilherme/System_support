@@ -22,7 +22,12 @@ const Container = ({
       style={{ width: width, height: height }}
       {...props}
     >
-      <div className="flex items-start justify-between">
+      <div
+        className={cn(
+          "flex justify-between",
+          !!title === false && "justify-end",
+        )}
+      >
         {title ||
           (subTitle && (
             <div className="flex flex-col justify-start gap-y-1">
