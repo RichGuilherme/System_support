@@ -6,7 +6,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/atoms/tabs";
-import Container from "@/components/ui/organisms/container";
+
 import ResourceInformations from "./ResourceInformations";
 import ResourceTickets from "./ResourceTickets";
 import { useMemo } from "react";
