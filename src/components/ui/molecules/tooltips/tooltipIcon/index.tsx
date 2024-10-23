@@ -5,10 +5,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/atoms/tooltip";
-import { tooltipProps } from "../@type";
+import { tooltipIconProps } from "../../@type";
 import { CircleAlertIcon } from "lucide-react";
 
-export function TooltipsIcon({ content }: tooltipProps) {
+export function TooltipsIcon({ content }: tooltipIconProps) {
   return (
     <TooltipProvider>
       <Tooltip>
