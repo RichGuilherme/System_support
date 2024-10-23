@@ -81,3 +81,14 @@ export interface IndicatorBadgeProps {
   | "text-green-light"
   | "text-green-dark";
 };
+
+// tooltips
+// icon
+export type tooltipIconProps = {
+  content: string;
+}
+
+export type tooltipTextProps = {
+  content: string;
+  text: React.ReactNode;
+}
