@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/atoms/collapsible";
 import { CollapsibleContent } from "@radix-ui/react-collapsible";
 import { useRef, useState } from "react";
+import useCloseAllCollapsibles from "@/components/hook/useClosedAllCollapsibles";
+import { TooltipText } from "@/components/ui/molecules/tooltips/tooltipText";
 
 export const SideBar = () => {
   const [expansed, setExpansed] = useState(true);
@@ -23,16 +25,19 @@ export const SideBar = () => {
   const pathname = usePathname();
   const firstSegment = pathname.split("/")[1];
 
-  const collapsibleRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  const collapsibleRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const closeAllCollapsibles = useCloseAllCollapsibles(collapsibleRefs);
 
   const handleButtonNav = (url: string) => {
     router.push(url);
 
-    Object.values(collapsibleRefs.current).forEach((collapsible) => {
-      if (collapsible?.getAttribute("data-state") === "open") {
-        collapsible.querySelector("button")?.click();
-      }
-    });
+    closeAllCollapsibles();
+  };
+
+  const handleButtonExpensed = () => {
+    setExpansed((prev) => !prev);
+
+    closeAllCollapsibles();
   };
 
   const handleCollapsibleOpen = () => {
@@ -53,7 +58,7 @@ export const SideBar = () => {
     >
       <Button
         variant="outline"
-        className="mb-4 mt-3 flex w-10/12 gap-1 rounded-xl border-highlight-verdinho px-1 py-2 text-sm text-sidebar-foreground"
+        className="mb-4 mt-3 flex w-10/12 gap-1 rounded-xl border-highlight-verdinho px-1 py-2 text-sm text-sidebar-foreground hover:text-textSimples-white"
       >
         <Plus className="icon-sm text-sidebar-foreground" />
         {expansed && "Abrir novo ticket"}
@@ -86,16 +91,38 @@ export const SideBar = () => {
                         )}
                       >
                         <div className="flex flex-row gap-3">
-                          <IconComponent
-                            size={18}
-                            className={cn(
-                              firstSegment === `${router.name}` &&
-                                "text-highlight-verdinho",
-                            )}
-                          />
-                          <span className={titleClasses}>
-                            {expansed && router.title}
-                          </span>
+                          {expansed ? (
+                            <>
+                              <IconComponent
+                                size={18}
+                                className={cn(
+                                  firstSegment === `${router.name}` &&
+                                    "text-highlight-verdinho",
+                                )}
+                              />
+                              <span className={titleClasses}>
+                                {expansed && router.title}
+                              </span>
+                            </>
+                          ) : (
+                            <TooltipText
+                              content={`${router.name}`}
+                              text={
+                                <>
+                                  <IconComponent
+                                    size={18}
+                                    className={cn(
+                                      firstSegment === `${router.name}` &&
+                                        "text-highlight-verdinho",
+                                    )}
+                                  />
+                                  <span className={titleClasses}>
+                                    {expansed && router.title}
+                                  </span>
+                                </>
+                              }
+                            />
+                          )}
                         </div>
 
                         {expansed && router.children && (
@@ -135,18 +162,23 @@ export const SideBar = () => {
                     )}
                     onClick={() => handleButtonNav(router.url || "")}
                   >
-                    <div className="flex flex-row gap-3">
-                      <IconComponent
-                        size={18}
-                        className={cn(
-                          firstSegment === `${router.name}` &&
-                            "text-highlight-verdinho",
-                        )}
-                      />
-                      <span className={titleClasses}>
-                        {expansed && router.title}
-                      </span>
-                    </div>
+                    <TooltipText
+                      content={`${router.name}`}
+                      text={
+                        <>
+                          <IconComponent
+                            size={18}
+                            className={cn(
+                              firstSegment === `${router.name}` &&
+                                "text-highlight-verdinho",
+                            )}
+                          />
+                          <span className={titleClasses}>
+                            {expansed && router.title}
+                          </span>
+                        </>
+                      }
+                    />
                   </Button>
                 )}
               </li>
@@ -162,7 +194,7 @@ export const SideBar = () => {
                 "rounded-full border-slate-400 bg-[var(--azul-900)] p-1",
                 !expansed && "transition-transfor rotate-180 duration-500",
               )}
-              onClick={() => setExpansed((prev) => !prev)}
+              onClick={() => handleButtonExpensed()}
             >
               <ChevronsRightIcon size={26} />
             </Button>
