@@ -35,10 +35,19 @@ export const SideBar = () => {
     });
   };
 
+  const handleCollapsibleOpen = () => {
+    setExpansed(true);
+  };
+
+  const titleClasses = cn(
+    "transition-opacity duration-300 ease-in-out",
+    !expansed ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0",
+  );
+
   return (
     <aside
       className={cn(
-        "gradient_azul sticky top-0 z-10 flex h-screen min-w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md duration-500 ease-in-out",
+        "gradient_azul sticky top-0 z-10 flex h-screen min-w-64 flex-col items-center space-y-4 rounded-br-2xl py-5 text-sidebar-foreground shadow-md duration-100 ease-in-out",
         !expansed && "min-w-0",
       )}
     >
@@ -63,9 +72,12 @@ export const SideBar = () => {
                     ref={(el) => {
                       collapsibleRefs.current[router.name] = el;
                     }}
+                    onOpenChange={(open) => {
+                      if (open) handleCollapsibleOpen();
+                    }}
                     className="group"
                   >
-                    <CollapsibleTrigger className="group w-full">
+                    <CollapsibleTrigger className="w-full">
                       <div
                         className={cn(
                           "flex w-full flex-row justify-between rounded-none px-5 py-3 text-sm font-light text-textSimples-200 hover:text-sidebar-foreground",
@@ -75,13 +87,15 @@ export const SideBar = () => {
                       >
                         <div className="flex flex-row gap-3">
                           <IconComponent
-                            size={20}
+                            size={18}
                             className={cn(
                               firstSegment === `${router.name}` &&
                                 "text-highlight-verdinho",
                             )}
                           />
-                          {expansed && router.title}
+                          <span className={titleClasses}>
+                            {expansed && router.title}
+                          </span>
                         </div>
 
                         {expansed && router.children && (
@@ -105,7 +119,7 @@ export const SideBar = () => {
                               className="flex w-full justify-start gap-3 rounded-none py-2 pl-[52px] text-sm font-light text-textSimples-200"
                               onClick={() => handleButtonNav(childRouter.url)}
                             >
-                              {expansed && childRouter.title}
+                              <span>{expansed && childRouter.title}</span>
                             </Button>
                           );
                         })}
@@ -123,13 +137,15 @@ export const SideBar = () => {
                   >
                     <div className="flex flex-row gap-3">
                       <IconComponent
-                        size={20}
+                        size={18}
                         className={cn(
                           firstSegment === `${router.name}` &&
                             "text-highlight-verdinho",
                         )}
                       />
-                      {expansed && router.title}
+                      <span className={titleClasses}>
+                        {expansed && router.title}
+                      </span>
                     </div>
                   </Button>
                 )}
