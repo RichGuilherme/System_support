@@ -6,7 +6,7 @@ import { columns } from "./table/columns";
 import Container from "@/components/ui/organisms/container";
 
 import { AttendantData } from "./table/data/dataAttendant";
-import { TooltipsIcon } from "@/components/ui/molecules/tooltipIcon";
+import { TooltipsIcon } from "@/components/ui/molecules/tooltips/tooltipIcon";
 import StatusInfoGroup from "./statusInfoGroup";
 import { PerServiceValues } from "@/components/data/mockups/chatsMockados";
 

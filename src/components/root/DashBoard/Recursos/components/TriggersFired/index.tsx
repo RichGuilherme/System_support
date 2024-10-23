@@ -1,6 +1,6 @@
 import Container from "@/components/ui/organisms/container";
 import TableTriggersFired from "./table";
-import { TooltipsIcon } from "@/components/ui/molecules/tooltipIcon";
+import { TooltipsIcon } from "@/components/ui/molecules/tooltips/tooltipIcon";
 
 const TriggersFired = () => {
   return (

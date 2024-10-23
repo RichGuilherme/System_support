@@ -1,5 +1,5 @@
 import { Switch } from "@/components/ui/atoms/switch";
-import { TooltipsIcon } from "@/components/ui/molecules/tooltipIcon";
+import { TooltipsIcon } from "@/components/ui/molecules/tooltips/tooltipIcon";
 import Container from "@/components/ui/organisms/container";
 
 const BoardDefaultClient = () => {

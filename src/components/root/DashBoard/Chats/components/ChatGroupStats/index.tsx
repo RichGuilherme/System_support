@@ -5,7 +5,7 @@ import { DataTable } from "@/components/ui/molecules/dataTable/";
 import Container from "@/components/ui/organisms/container";
 
 import { chatsStatsData } from "./table/data/dataChatGroupStats";
-import { TooltipsIcon } from "@/components/ui/molecules/tooltipIcon";
+import { TooltipsIcon } from "@/components/ui/molecules/tooltips/tooltipIcon";
 import { columns } from "./table/columns";
 
 const ChatGroupStats = () => {

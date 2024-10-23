@@ -6,7 +6,7 @@ import { columns } from "./table/columns";
 import Container from "@/components/ui/organisms/container";
 
 import { data } from "./table/data/dataChatsDepartaments";
-import { TooltipsIcon } from "@/components/ui/molecules/tooltipIcon";
+import { TooltipsIcon } from "@/components/ui/molecules/tooltips/tooltipIcon";
 
 const ChatsDepartament = () => {
   return (
