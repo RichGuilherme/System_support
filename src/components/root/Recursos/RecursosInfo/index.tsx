@@ -25,19 +25,18 @@ const RecursosInfor = ({ paramsValue }: { paramsValue: string }) => {
         value: "technicalSpecifications",
         component: <ResourceTechnical />,
       },
-
-      {
-        label: "Software e lincença",
-        value: "softwareLincece",
-      },
-      {
-        label: "Gatilhos",
-        value: "trigger",
-      },
-      {
-        label: "Arquivos",
-        value: "file",
-      },
+      // {
+      //   label: "Software e lincença",
+      //   value: "softwareLincece",
+      // },
+      // {
+      //   label: "Gatilhos",
+      //   value: "trigger",
+      // },
+      // {
+      //   label: "Arquivos",
+      //   value: "file",
+      // },
       {
         label: "Tickets",
         value: "tickets",

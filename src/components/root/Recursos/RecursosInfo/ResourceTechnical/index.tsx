@@ -16,6 +16,20 @@ import PrinterTable from "./components/PrinterTable";
 const ResourceTechnical = () => {
   return (
     <div className="page-container">
+      <Container width="100%" style="space-y-1">
+        <h1 className="text-lg font-semibold">Sobre</h1>
+
+        <div className="flex flex-row gap-7">
+          <div className="text-highlight-primary">Usuário</div>
+          <span className="text-textSimples-300">Richard Guilherme</span>
+        </div>
+
+        <div className="flex flex-row gap-7">
+          <div className="text-highlight-primary">Último acesso</div>
+          <span className="text-textSimples-300">_ _</span>
+        </div>
+      </Container>
+
       <Container width="100%">
         <div className="flex flex-row flex-wrap justify-center gap-5">
           <div className="flex w-[460px] flex-col gap-2 rounded-lg border border-border-100 p-4">
@@ -175,10 +189,6 @@ const ResourceTechnical = () => {
           <NetworkTable />
           <PrinterTable />
         </div>
-      </Container>
-
-      <Container>
-        <div></div>
       </Container>
     </div>
   );
